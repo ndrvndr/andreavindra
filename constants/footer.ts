@@ -1,0 +1,81 @@
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+} from "@tabler/icons-react"
+
+import type { FooterContent, SocialLink } from "@/types/navigation"
+
+export const footerContents: FooterContent[] = [
+  {
+    title: "General",
+    links: [
+      {
+        label: "Home",
+        href: "/",
+      },
+      {
+        label: "Blog",
+        href: "/blog",
+      },
+      {
+        label: "Projects",
+        href: "/projects",
+      },
+      {
+        label: "Album",
+        href: "/photos",
+      },
+      {
+        label: "About",
+        href: "/about",
+      },
+    ],
+  },
+  {
+    title: "The Website",
+    links: [
+      {
+        label: "Bucket List",
+        href: "/bucket-list",
+      },
+      {
+        label: "Statistics",
+        href: "/statistics",
+      },
+      {
+        label: "Guest Book",
+        href: "/guest-book",
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      {
+        label: "RSS",
+        href: "/rss.xml",
+      },
+    ],
+  },
+]
+
+export const socialLinks: SocialLink[] = [
+  {
+    label: "Email",
+    icon: IconMail,
+    href: "mailto:andreavindra37@gmail.com",
+  },
+  {
+    label: "LinkedIn",
+    icon: IconBrandLinkedin,
+    href: "https://www.linkedin.com/in/ndrvndr/",
+    newTab: true,
+  },
+  {
+    label: "GitHub",
+    icon: IconBrandGithub,
+    href: "https://github.com/ndrvndr",
+    newTab: true,
+  },
+]

@@ -1,0 +1,37 @@
+import {
+  IconArticle,
+  IconBriefcase,
+  IconHome,
+  IconLibraryPhoto,
+  IconUser,
+} from "@tabler/icons-react"
+
+import type { NavigationItem } from "@/types/navigation"
+
+export const navigationLinks: NavigationItem[] = [
+  {
+    title: "Home",
+    icon: IconHome,
+    href: "/",
+  },
+  {
+    title: "Blog",
+    icon: IconArticle,
+    href: "/blog",
+  },
+  {
+    title: "Projects",
+    icon: IconBriefcase,
+    href: "/projects",
+  },
+  {
+    title: "Album",
+    icon: IconLibraryPhoto,
+    href: "/photos",
+  },
+  {
+    title: "About",
+    icon: IconUser,
+    href: "/about",
+  },
+]
