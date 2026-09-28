@@ -56,7 +56,7 @@ export function ProjectCard({ isReversed = false }: ProjectCardProps) {
         <h3 className="text-4xl font-bold">Dimension AI</h3>
 
         <div className="lg:mt-6 lg:rounded-xl lg:border lg:border-dashed lg:border-neutral-900 lg:bg-background lg:p-6">
-          <p className="mt-6 text-sm lg:mt-0">
+          <p className="mt-6 text-sm text-muted-foreground lg:mt-0">
             Having struggled with understanding how the Spotify OAuth flow
             works, I made the course I wish I could have had. Unlike tutorials
             that only cover a few concepts and leave you with half-baked GitHub
@@ -68,7 +68,7 @@ export function ProjectCard({ isReversed = false }: ProjectCardProps) {
         </div>
 
         <div className="mt-6 flex items-center gap-2">
-          <p className="text-xs">Tools:</p>
+          <p className="text-xs text-muted-foreground">Tools:</p>
           <ul className="flex gap-x-2">
             {[IconBrandNextjs, IconBrandTailwind, IconBrandTypescript].map(
               (Icon) => (
