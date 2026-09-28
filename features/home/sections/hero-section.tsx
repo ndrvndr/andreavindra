@@ -23,8 +23,8 @@ export function HeroSection() {
         <div className="mt-10 flex gap-x-2" aria-label="Hero actions">
           <HoverBorderGradient containerClassName="rounded-xl">
             <Button variant="secondary" size="lg" asChild>
-              <a href="#projects">
-                <span>View My Work</span>
+              <a href="#how-i-work">
+                <span>How I Work</span>
                 <IconChevronDown aria-hidden="true" />
               </a>
             </Button>

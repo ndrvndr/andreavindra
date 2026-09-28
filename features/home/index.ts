@@ -1,4 +1,5 @@
-export { PostsSection } from "./sections/posts-section"
 export { CtaSection } from "./sections/cta-section"
 export { HeroSection } from "./sections/hero-section"
+export { HowIWorkSection } from "./sections/how-i-work-section"
+export { PostsSection } from "./sections/posts-section"
 export { ProjectsSection } from "./sections/projects-section"

@@ -8,11 +8,7 @@ import { ProjectCard } from "@/features/projects/components/project-card"
 
 export function ProjectsSection() {
   return (
-    <section
-      id="projects"
-      aria-labelledby="projects-heading"
-      className="scroll-mt-28"
-    >
+    <section id="projects" aria-labelledby="projects-heading">
       <div className="layout relative z-10 py-12 pt-20 md:py-20 lg:pt-36">
         <div className="relative text-center">
           <p
@@ -25,7 +21,7 @@ export function ProjectsSection() {
             id="projects-heading"
             className="text-center text-5xl leading-16 font-bold md:text-6xl"
           >
-            Things I’ve <Highlight>Built</Highlight>
+            Somethings I’ve <Highlight>Built</Highlight>
           </h2>
         </div>
 

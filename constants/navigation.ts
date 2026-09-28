@@ -3,6 +3,7 @@ import {
   IconBriefcase,
   IconHome,
   IconLibraryPhoto,
+  IconSend,
   IconUser,
 } from "@tabler/icons-react"
 
@@ -33,5 +34,10 @@ export const navigationLinks: NavigationItem[] = [
     title: "About",
     icon: IconUser,
     href: "/about",
+  },
+  {
+    title: "Contact",
+    icon: IconSend,
+    href: "/contact",
   },
 ]
