@@ -26,10 +26,11 @@ export default function RootLayout({
         "dark",
         inter.variable,
         fontMono.variable,
-        "font-sans antialiased"
+        "font-sans antialiased",
+        "scroll-smooth"
       )}
     >
-      <body>
+      <body className="antialiased">
         <ScrollbarActivity />
         <Header />
         <main>{children}</main>

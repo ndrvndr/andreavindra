@@ -132,6 +132,10 @@
   }
 }
 
+.layout {
+  @apply mx-auto w-11/12 max-w-7xl;
+}
+
 /* Global scrollbar */
 * {
   scrollbar-width: thin;

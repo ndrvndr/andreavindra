@@ -2,7 +2,7 @@ import { IconExternalLink } from "@tabler/icons-react"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
-import { NoiseBackground } from "@/components/ui/noise-background"
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
 import { Separator } from "@/components/ui/separator"
 import { footerContents, socialLinks } from "@/constants/footer"
 
@@ -13,7 +13,7 @@ export function Footer() {
     <footer>
       <Separator />
 
-      <div className="mx-auto grid w-11/12 max-w-7xl gap-8 py-24 md:grid-cols-[1fr_1.8fr_1fr] md:gap-16">
+      <div className="layout grid gap-8 py-24 md:grid-cols-[1fr_1.8fr_1fr] md:gap-16">
         <div>
           <p className="text-2xl font-bold text-foreground">Andre Avindra</p>
 
@@ -31,7 +31,7 @@ export function Footer() {
                   target={social.newTab ? "_blank" : undefined}
                   rel={social.newTab ? "noopener noreferrer" : undefined}
                 >
-                  <Icon className="size-5" />
+                  <Icon className="size-5 text-muted-foreground" />
                 </Link>
               </li>
             ))}
@@ -65,7 +65,7 @@ export function Footer() {
         </nav>
 
         <section aria-labelledby="newsletter-title">
-          <h3 id="newsletter-title" className="text-foreground">
+          <h3 id="newsletter-title" className="font-semibold text-foreground">
             Subscribe to new posts
           </h3>
 
@@ -73,34 +73,33 @@ export function Footer() {
             Get new articles delivered straight to your inbox. No spam.
           </p>
 
-          <NoiseBackground
-            containerClassName="mt-6 w-fit rounded-full p-1"
-            gradientColors={[
-              "rgb(18, 255, 247)",
-              "rgb(99, 255, 209)",
-              "rgb(179, 255, 171)",
-            ]}
-          >
-            <Button variant="secondary" asChild>
+          <HoverBorderGradient containerClassName="mt-6 rounded-xl">
+            <Button variant="secondary" size="lg" asChild>
               <Link
                 href="https://andreavindra.substack.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span>Subscribe</span>
-                <IconExternalLink className="size-4" />
+                <IconExternalLink />
               </Link>
             </Button>
-          </NoiseBackground>
+          </HoverBorderGradient>
         </section>
       </div>
 
-      <Separator className="mx-auto w-11/12 max-w-7xl" />
+      <Separator className="layout" />
 
-      <div className="mx-auto max-w-7xl px-4 py-10 text-center">
+      <div className="layout px-4 pt-10 text-center">
         <small className="text-sm text-muted-foreground">
-          Copyright © {currentYear} Andre Avindra. All rights reserved.
+          © {currentYear} Andre Avindra. All rights reserved.
         </small>
+      </div>
+
+      <div className="layout">
+        <p className="inset-x-0 bg-linear-to-b from-neutral-50 to-neutral-200 bg-clip-text text-center text-5xl font-bold text-transparent md:text-9xl lg:text-[12rem] xl:text-[13rem] dark:from-neutral-950 dark:to-neutral-800">
+          ndr.vndr
+        </p>
       </div>
     </footer>
   )
