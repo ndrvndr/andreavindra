@@ -2,10 +2,10 @@ import { Spotlight } from "@/components/ui/spotlight-new"
 import {
   HeroSection,
   HowIWorkSection,
+  JournalSection,
   PostsSection,
   ProjectsSection,
 } from "@/features/home"
-import { cn } from "@/lib/utils"
 
 export default function Page() {
   return (
@@ -14,7 +14,7 @@ export default function Page() {
       <HeroSection />
       <HowIWorkSection />
       <PostsSection />
-      <HowIWorkSection />
+      <JournalSection />
       <ProjectsSection />
     </div>
   )

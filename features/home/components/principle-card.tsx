@@ -18,7 +18,7 @@ export function PrincipleCard({
   return (
     <article
       className={cn(
-        "group/feature relative flex h-full flex-col bg-background py-10 lg:border-r dark:border-border",
+        "group/feature relative flex h-full flex-col bg-card py-10 lg:border-r dark:border-border",
         (index === 0 || index === 3) && "lg:border-l dark:border-border",
         index < 3 && "lg:border-b dark:border-border"
       )}

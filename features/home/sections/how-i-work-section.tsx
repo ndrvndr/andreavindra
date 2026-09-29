@@ -20,7 +20,7 @@ export function HowIWorkSection() {
       />
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center mask-[radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-background" />
 
-      <div className="layout flex flex-col items-center py-12 pt-20 md:py-20">
+      <div className="layout relative z-10 flex flex-col items-center py-12 pt-20 md:py-20">
         <p className="text-sm tracking-[0.3em] text-muted-foreground uppercase">
           How I Work
         </p>

@@ -113,33 +113,22 @@ export const Highlight = ({
   className?: string
 }) => {
   return (
-    <motion.span
-      initial={{
-        backgroundSize: "0% 100%",
-      }}
-      animate={{
-        backgroundSize: "100% 100%",
-      }}
-      transition={{
-        duration: 2,
-        ease: "linear",
-        delay: 0.5,
-      }}
-      style={{
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "left center",
-        display: "inline",
-      }}
-      className={cn(
-        "relative inline-block rounded-lg bg-linear-to-r dark:text-background",
-        "from-[rgb(18,255,247)]",
-        "via-[rgb(99,255,209)]",
-        "to-[rgb(179,255,171)]",
-        "px-1 pb-1",
-        className
-      )}
-    >
-      {children}
-    </motion.span>
+    <span className={cn("relative inline-block px-1 pb-1", className)}>
+      <span className="text-foreground">{children}</span>
+
+      <motion.span
+        aria-hidden
+        initial={{ clipPath: "inset(0 100% 0 0 round 0.5rem)" }}
+        animate={{ clipPath: "inset(0 0% 0 0 round 0.5rem)" }}
+        transition={{ duration: 2, ease: "linear", delay: 0.5 }}
+        className={cn(
+          "pointer-events-none absolute inset-0 rounded-lg px-1 pb-1",
+          "bg-linear-to-r from-[rgb(18,255,247)] via-[rgb(99,255,209)] to-[rgb(179,255,171)]",
+          "text-foreground dark:text-background"
+        )}
+      >
+        {children}
+      </motion.span>
+    </span>
   )
 }
