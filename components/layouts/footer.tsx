@@ -73,15 +73,20 @@ export function Footer() {
             Get new articles delivered straight to your inbox. No spam.
           </p>
 
-          <HoverBorderGradient containerClassName="mt-6 rounded-xl">
-            <Button variant="secondary" size="lg" asChild>
+          <HoverBorderGradient as="div" containerClassName="mt-6 rounded-xl">
+            <Button
+              variant="secondary"
+              size="lg"
+              asChild
+              className="h-12 min-w-32 px-6"
+            >
               <Link
                 href="https://andreavindra.substack.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span>Subscribe</span>
-                <IconExternalLink />
+                <IconExternalLink aria-hidden="true" />
               </Link>
             </Button>
           </HoverBorderGradient>

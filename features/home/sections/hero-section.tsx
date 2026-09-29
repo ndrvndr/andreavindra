@@ -20,8 +20,12 @@ export function HeroSection() {
           </p>
         </header>
 
-        <div className="mt-10 flex gap-x-2" aria-label="Hero actions">
-          <HoverBorderGradient containerClassName="rounded-xl">
+        <div
+          role="group"
+          aria-label="Hero actions"
+          className="mt-10 flex flex-wrap items-center justify-center gap-2"
+        >
+          <HoverBorderGradient as="div" containerClassName="rounded-xl">
             <Button variant="secondary" size="lg" asChild>
               <a href="#how-i-work">
                 <span>How I Work</span>
@@ -30,8 +34,8 @@ export function HeroSection() {
             </Button>
           </HoverBorderGradient>
 
-          <Button variant="outline" size="lg" asChild className="h-11">
-            <Link href="/about">The Story So Far</Link>
+          <Button variant="outline" size="lg" asChild>
+            <Link href="/about">Get to Know Me</Link>
           </Button>
         </div>
 

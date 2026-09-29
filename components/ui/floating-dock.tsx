@@ -72,9 +72,12 @@ const FloatingDockMobile = ({
                 <a
                   href={item.href}
                   key={item.title}
+                  aria-label={item.title}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-primary-foreground"
                 >
-                  <div className="h-4 w-4">{item.icon}</div>
+                  <div className="h-4 w-4" aria-hidden="true">
+                    {item.icon}
+                  </div>
                 </a>
               </motion.div>
             ))}
@@ -82,7 +85,10 @@ const FloatingDockMobile = ({
         )}
       </AnimatePresence>
       <button
+        type="button"
         onClick={() => setOpen(!open)}
+        aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={open}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-secondary"
       >
         <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
@@ -165,7 +171,7 @@ function IconContainer({
   const [hovered, setHovered] = useState(false)
 
   return (
-    <Link href={href}>
+    <Link href={href} aria-label={title}>
       <motion.div
         ref={ref}
         style={{ width, height }}
@@ -188,6 +194,7 @@ function IconContainer({
         <motion.div
           style={{ width: widthIcon, height: heightIcon }}
           className="flex items-center justify-center"
+          aria-hidden="true"
         >
           {icon}
         </motion.div>
