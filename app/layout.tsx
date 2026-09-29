@@ -2,9 +2,6 @@ import "./globals.css"
 
 import { Geist_Mono, Inter } from "next/font/google"
 
-import { Footer } from "@/components/layouts/footer"
-import { Header } from "@/components/layouts/header"
-import { ScrollbarActivity } from "@/components/scrollbar-activity"
 import { cn } from "@/lib/utils"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -30,12 +27,7 @@ export default function RootLayout({
         "scroll-smooth"
       )}
     >
-      <body className="antialiased">
-        <ScrollbarActivity />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }

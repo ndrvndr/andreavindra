@@ -14,6 +14,7 @@ export default function Page() {
       <HeroSection />
       <HowIWorkSection />
       <PostsSection />
+      <HowIWorkSection />
       <ProjectsSection />
     </div>
   )
