@@ -1,6 +1,10 @@
 import type { NextConfig } from "next"
+import path from "path"
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    root: path.join(__dirname),
+  },
   images: {
     remotePatterns: [
       {
@@ -11,8 +15,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "res.cloudinary.com",
       },
+      {
+        protocol: "https",
+        hostname: "api.microlink.io",
+      },
     ],
-    domains: ["api.microlink.io"],
   },
 }
 
