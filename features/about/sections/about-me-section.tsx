@@ -58,14 +58,14 @@ export function AboutMeSection() {
           <p className="mt-8 text-muted-foreground">
             Hi, I'm Andre. My journey into web development began at the start of
             the pandemic. With a lot of free time, I picked up the basics from
-            online forums and YouTube, starting with what users see and
-            gradually digging into everything behind it. Somewhere along the
-            way, curiosity turned into a career as a full-stack engineer.
+            online forums and YouTube, mostly around frontend. Somewhere along
+            the way, curiosity turned into a career as a frontend developer.
           </p>
           <p className="mt-4 text-muted-foreground">
-            I enjoy working across the whole stack, from designing interfaces to
-            building APIs and databases. There's always a new tool or concept to
-            explore, and that's what keeps me hooked. I welcome constructive
+            As I grew professionally, I kept running into the parts of a product
+            that live beyond the browser. So I started learning backend and
+            DevOps on my own to fill those gaps, from building APIs and
+            databases to shipping and running apps. I welcome constructive
             feedback because it's the fastest way to get better.
           </p>
           <p className="mt-4 text-muted-foreground">
