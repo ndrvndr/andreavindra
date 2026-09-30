@@ -25,7 +25,7 @@ export const footerContents: FooterContent[] = [
         href: "/projects",
       },
       {
-        label: "Album",
+        label: "Gallery",
         href: "/gallery",
       },
       {
