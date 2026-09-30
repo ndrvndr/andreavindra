@@ -1,7 +1,7 @@
 import { Metadata } from "next"
 
 import { DEFAULT_METADATA } from "@/constants/metadata"
-import { AboutMeSection, TimelineSection } from "@/features/about"
+import AboutContainer from "@/features/about/about-container"
 
 export const metadata: Metadata = {
   title: "About",
@@ -13,10 +13,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return (
-    <div>
-      <AboutMeSection />
-      <TimelineSection />
-    </div>
-  )
+  return <AboutContainer />
 }

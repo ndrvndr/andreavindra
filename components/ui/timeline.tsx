@@ -51,7 +51,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </p>
       </header>
 
-      <div ref={ref} className="relative mt-16 md:mt-0">
+      <div ref={ref} className="relative mt-16 pb-6.5 md:mt-0">
         <ul>
           {data.map((item) => (
             <li

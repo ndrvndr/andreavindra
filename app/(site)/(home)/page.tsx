@@ -1,14 +1,7 @@
 import { Metadata } from "next"
 
-import { Spotlight } from "@/components/ui/spotlight-new"
-import {
-  HeroSection,
-  HowIWorkSection,
-  JournalSection,
-  PostsSection,
-  ProjectsSection,
-} from "@/features/home"
 import { DEFAULT_METADATA } from "@/constants/metadata"
+import HomeContainer from "@/features/home/home-container"
 
 export const metadata: Metadata = {
   title: "Home",
@@ -20,14 +13,5 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return (
-    <div className="relative overflow-hidden">
-      <Spotlight />
-      <HeroSection />
-      <HowIWorkSection />
-      <PostsSection />
-      <JournalSection />
-      <ProjectsSection />
-    </div>
-  )
+  return <HomeContainer />
 }

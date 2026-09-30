@@ -22,7 +22,7 @@ export function AboutMeSection() {
           the journey
         </p>
 
-        <div className="layout flex flex-col items-center pt-28 pb-12 md:pt-48 md:pb-20">
+        <div className="layout flex flex-col items-center pt-28 pb-12 text-center md:pt-48 md:pb-20">
           <Button
             asChild
             size="icon-lg"
