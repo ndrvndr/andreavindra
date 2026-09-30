@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
+import { LinkPreview } from "@/components/ui/link-preview"
 import { socialLinks } from "@/constants/footer"
 
 export function HeroSection() {
@@ -34,7 +35,7 @@ export function HeroSection() {
             </Button>
           </HoverBorderGradient>
 
-          <Button variant="outline" size="lg" asChild>
+          <Button variant="outline" size="lg" asChild className="h-13">
             <Link href="/about">Get to Know Me</Link>
           </Button>
         </div>
@@ -43,18 +44,29 @@ export function HeroSection() {
           <ul className="flex gap-3">
             {socialLinks.map(({ icon: Icon, ...social }) => (
               <li key={social.href}>
-                <Link
-                  href={social.href}
-                  aria-label={social.label}
-                  target={social.newTab ? "_blank" : undefined}
-                  rel={social.newTab ? "noopener noreferrer" : undefined}
-                  className="inline-flex"
-                >
-                  <Icon
-                    aria-hidden="true"
-                    className="size-5 text-muted-foreground"
-                  />
-                </Link>
+                {social.newTab ? (
+                  <LinkPreview
+                    url={social.href}
+                    aria-label={social.label}
+                    className="inline-flex"
+                  >
+                    <Icon
+                      aria-hidden="true"
+                      className="size-5 text-muted-foreground"
+                    />
+                  </LinkPreview>
+                ) : (
+                  <Link
+                    href={social.href}
+                    aria-label={social.label}
+                    className="inline-flex"
+                  >
+                    <Icon
+                      aria-hidden="true"
+                      className="size-5 text-muted-foreground"
+                    />
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

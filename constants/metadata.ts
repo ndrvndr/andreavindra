@@ -6,7 +6,7 @@ export const DEFAULT_METADATA = {
   keyword:
     "ndrvndr, andre avindra, learn nextjs, learn javascript, learn typescript",
   siteName: "andreavindra.vercel.app",
-  url: "https://andreavindra.vercel.app/",
+  url: "https://andreavindra.vercel.app",
   image: "/metaImage.svg",
   locale: "id-ID",
 }

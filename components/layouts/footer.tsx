@@ -3,6 +3,7 @@ import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
+import { LinkPreview } from "@/components/ui/link-preview"
 import { Separator } from "@/components/ui/separator"
 import { footerContents, socialLinks } from "@/constants/footer"
 
@@ -25,14 +26,21 @@ export function Footer() {
           <ul aria-label="Social links" className="mt-6 flex gap-3">
             {socialLinks.map(({ icon: Icon, ...social }) => (
               <li key={social.href}>
-                <Link
-                  href={social.href}
-                  aria-label={social.label}
-                  target={social.newTab ? "_blank" : undefined}
-                  rel={social.newTab ? "noopener noreferrer" : undefined}
-                >
-                  <Icon className="size-5 text-muted-foreground" />
-                </Link>
+                {social.newTab ? (
+                  <LinkPreview url={social.href} aria-label={social.label}>
+                    <Icon
+                      aria-hidden="true"
+                      className="size-5 text-muted-foreground"
+                    />
+                  </LinkPreview>
+                ) : (
+                  <Link href={social.href} aria-label={social.label}>
+                    <Icon
+                      aria-hidden="true"
+                      className="size-5 text-muted-foreground"
+                    />
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -80,14 +88,10 @@ export function Footer() {
               asChild
               className="h-12 min-w-32 px-6"
             >
-              <Link
-                href="https://andreavindra.substack.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <LinkPreview url="https://andreavindra.substack.com/">
                 <span>Subscribe</span>
                 <IconExternalLink aria-hidden="true" />
-              </Link>
+              </LinkPreview>
             </Button>
           </HoverBorderGradient>
         </section>

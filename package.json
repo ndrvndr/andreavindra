@@ -12,6 +12,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.1.23",
     "@tabler/icons-react": "^3.48.0",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.4.0",
@@ -19,6 +20,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "motion": "^13.4.4",
     "next": "16.3.4",
+    "qss": "^3.0.0",
     "radix-ui": "^1.6.7",
     "react": "19.2.8",
     "react-dom": "19.2.8",

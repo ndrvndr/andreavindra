@@ -3,6 +3,7 @@ import "./globals.css"
 import { Metadata } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
 
+import { TooltipProvider } from "@/components/ui/tooltip"
 import { DEFAULT_METADATA } from "@/constants/metadata"
 import { cn } from "@/lib/utils"
 
@@ -62,7 +63,9 @@ export default function RootLayout({
         "scroll-smooth"
       )}
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <TooltipProvider>{children}</TooltipProvider>
+      </body>
     </html>
   )
 }
