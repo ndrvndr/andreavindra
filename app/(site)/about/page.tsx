@@ -6,7 +6,7 @@ import AboutContainer from "@/features/about/about-container"
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Andre, a front-end developer who embarked on his learning journey in 2022, shares his insights and thoughts for comprehending various aspects of front-end development through his blog posts.",
+    "Andre Avindra is a full-stack engineer who started as a frontend developer. Learn about my journey, the tools I use, and my work experience.",
   alternates: {
     canonical: `${DEFAULT_METADATA.url}/about`,
   },
