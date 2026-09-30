@@ -11,13 +11,35 @@ import {
   MotionValue,
   motion,
   useMotionValue,
+  useReducedMotion,
   useSpring,
   useTransform,
 } from "motion/react"
 import Link from "next/link"
 import { useRef, useState } from "react"
 
+import { useHideOnScroll } from "@/hooks/use-hide-on-scroll"
 import { cn } from "@/lib/utils"
+
+const dockVariants = {
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: { type: "spring", stiffness: 260, damping: 24 },
+  },
+  hidden: {
+    y: -100,
+    opacity: 0,
+    transition: { duration: 0.25, ease: "easeIn" },
+  },
+} as const
+
+function useDockTransition() {
+  const reduceMotion = useReducedMotion()
+  return reduceMotion
+    ? { duration: 0 }
+    : ({ duration: 0.3, ease: "easeInOut" } as const)
+}
 
 export const FloatingDock = ({
   items,
@@ -28,10 +50,32 @@ export const FloatingDock = ({
   desktopClassName?: string
   mobileClassName?: string
 }) => {
+  const scrolledDown = useHideOnScroll()
+  const [keyboardFocus, setKeyboardFocus] = useState(false)
+
+  const hidden = scrolledDown && !keyboardFocus
+
+  const focusHandlers = {
+    onFocus: (e: React.FocusEvent) => {
+      if (e.target.matches(":focus-visible")) setKeyboardFocus(true)
+    },
+    onBlur: () => setKeyboardFocus(false),
+  }
+
   return (
     <>
-      <FloatingDockDesktop items={items} className={desktopClassName} />
-      <FloatingDockMobile items={items} className={mobileClassName} />
+      <FloatingDockDesktop
+        items={items}
+        className={desktopClassName}
+        hidden={hidden}
+        {...focusHandlers}
+      />
+      <FloatingDockMobile
+        items={items}
+        className={mobileClassName}
+        hidden={hidden}
+        {...focusHandlers}
+      />
     </>
   )
 }
@@ -39,13 +83,35 @@ export const FloatingDock = ({
 const FloatingDockMobile = ({
   items,
   className,
+  hidden,
+  onFocus,
+  onBlur,
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[]
   className?: string
+  hidden: boolean
+  onFocus: React.FocusEventHandler
+  onBlur: React.FocusEventHandler
 }) => {
   const [open, setOpen] = useState(false)
+  const transition = useDockTransition()
+
+  const isHidden = hidden && !open
+
   return (
-    <nav className={cn("relative block md:hidden", className)}>
+    <motion.nav
+      initial={false}
+      variants={dockVariants}
+      animate={isHidden ? "hidden" : "visible"}
+      transition={transition}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      className={cn(
+        "relative block md:hidden",
+        isHidden && "pointer-events-none",
+        className
+      )}
+    >
       <AnimatePresence>
         {open && (
           <motion.div
@@ -56,22 +122,16 @@ const FloatingDockMobile = ({
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 10 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{
                   opacity: 0,
                   y: 10,
-                  transition: {
-                    delay: idx * 0.05,
-                  },
+                  transition: { delay: idx * 0.05 },
                 }}
                 transition={{ delay: (items.length - 1 - idx) * 0.05 }}
               >
                 <a
                   href={item.href}
-                  key={item.title}
                   aria-label={item.title}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-primary-foreground"
                 >
@@ -93,24 +153,39 @@ const FloatingDockMobile = ({
       >
         <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
       </button>
-    </nav>
+    </motion.nav>
   )
 }
 
 const FloatingDockDesktop = ({
   items,
   className,
+  hidden,
+  onFocus,
+  onBlur,
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[]
   className?: string
+  hidden: boolean
+  onFocus: React.FocusEventHandler
+  onBlur: React.FocusEventHandler
 }) => {
-  let mouseX = useMotionValue(Infinity)
+  const mouseX = useMotionValue(Infinity)
+  const transition = useDockTransition()
+
   return (
     <motion.div
+      initial={false}
+      variants={dockVariants}
+      animate={hidden ? "hidden" : "visible"}
+      transition={transition}
+      onFocus={onFocus}
+      onBlur={onBlur}
       onMouseMove={(e) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
         "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 md:flex dark:bg-primary-foreground",
+        hidden && "pointer-events-none",
         className
       )}
     >
