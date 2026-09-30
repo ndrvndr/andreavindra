@@ -26,7 +26,7 @@ export const footerContents: FooterContent[] = [
       },
       {
         label: "Album",
-        href: "/photos",
+        href: "/gallery",
       },
       {
         label: "About",
@@ -47,7 +47,7 @@ export const footerContents: FooterContent[] = [
       },
       {
         label: "Guest Book",
-        href: "/guest-book",
+        href: "/guestbook",
       },
     ],
   },
