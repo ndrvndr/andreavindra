@@ -26,9 +26,9 @@ export const navigationLinks: NavigationItem[] = [
     href: "/projects",
   },
   {
-    title: "Album",
+    title: "Gallery",
     icon: IconLibraryPhoto,
-    href: "/photos",
+    href: "/gallery",
   },
   {
     title: "About",
