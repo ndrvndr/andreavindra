@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Highlight } from "@/components/ui/hero-highlight"
 import { Separator } from "@/components/ui/separator"
 import { ProjectCard } from "@/features/projects/components/project-card"
+import { projects } from "@/constants/projects"
 
 export function ProjectsSection() {
   return (
@@ -40,12 +41,12 @@ export function ProjectsSection() {
 
           <div className="space-y-4">
             <ul className="space-y-8 lg:space-y-0">
-              {Array.from({ length: 2 }).map((_, idx) => {
+              {projects.slice(0, 2).map((project, idx) => {
                 const isReversed = idx % 2 === 1
 
                 return (
-                  <li key={idx}>
-                    <ProjectCard isReversed={isReversed} />
+                  <li key={project.title}>
+                    <ProjectCard project={project} isReversed={isReversed} />
                   </li>
                 )
               })}
