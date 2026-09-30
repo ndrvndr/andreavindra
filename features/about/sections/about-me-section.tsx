@@ -1,9 +1,8 @@
 import { IconUser } from "@tabler/icons-react"
 import Link from "next/link"
 
-import { Button } from "@/components/ui/button"
+import { PageHeader } from "@/components/layouts/page-header"
 import { ChromaticImage } from "@/components/ui/chromatic-image"
-import { Highlight } from "@/components/ui/hero-highlight"
 import {
   Tooltip,
   TooltipContent,
@@ -14,31 +13,13 @@ import { techStack } from "@/constants/about"
 export function AboutMeSection() {
   return (
     <>
-      <header className="relative">
-        <p
-          aria-hidden={true}
-          className="absolute bottom-42.5 left-0 hidden text-[250px] leading-0 font-bold text-secondary opacity-5 lg:block"
-        >
-          the journey
-        </p>
-
-        <div className="layout flex flex-col items-center pt-28 pb-12 text-center md:pt-48 md:pb-20">
-          <Button
-            asChild
-            size="icon-lg"
-            variant="secondary"
-            className="pointer-events-none"
-          >
-            <span aria-hidden="true">
-              <IconUser />
-            </span>
-          </Button>
-          <h1 className="mt-4 text-5xl font-bold md:text-6xl">
-            Meet <Highlight>Andre</Highlight>
-          </h1>
-          <p className="mt-3">From lockdown curiosity to full-stack engineer</p>
-        </div>
-      </header>
+      <PageHeader
+        backgroundText="the journey"
+        icon={IconUser}
+        title="Meet"
+        highlight="Andre"
+        description="From lockdown curiosity to full-stack engineer"
+      />
 
       <section
         aria-labelledby="profile-name"

@@ -1,6 +1,8 @@
 import {
   IconBrandGithub,
   IconBrandLinkedin,
+  IconBrandMeta,
+  IconBrandX,
   IconMail,
 } from "@tabler/icons-react"
 
@@ -76,6 +78,18 @@ export const socialLinks: SocialLink[] = [
     label: "GitHub",
     icon: IconBrandGithub,
     href: "https://github.com/ndrvndr",
+    newTab: true,
+  },
+  {
+    label: "Instagram",
+    icon: IconBrandMeta,
+    href: "https://www.instagram.com/ndr.vndr/",
+    newTab: true,
+  },
+  {
+    label: "X",
+    icon: IconBrandX,
+    href: "https://x.com/ndrvndr",
     newTab: true,
   },
 ]

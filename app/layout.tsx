@@ -3,6 +3,7 @@ import "./globals.css"
 import { Metadata } from "next"
 import { Geist_Mono, Inter } from "next/font/google"
 
+import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { DEFAULT_METADATA } from "@/constants/metadata"
 import { cn } from "@/lib/utils"
@@ -66,6 +67,7 @@ export default function RootLayout({
     >
       <body className="antialiased">
         <TooltipProvider>{children}</TooltipProvider>
+        <Toaster />
       </body>
     </html>
   )
