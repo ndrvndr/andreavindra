@@ -7,9 +7,7 @@ export const metadata: Metadata = {
   title: "Projects",
   description:
     "A collection of projects I've built, explored, and learned from across web development and software engineering.",
-  alternates: {
-    canonical: `${DEFAULT_METADATA.url}/projects`,
-  },
+  alternates: { canonical: `${DEFAULT_METADATA.url}/projects` },
 }
 
 export default function Page() {

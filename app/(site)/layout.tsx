@@ -14,7 +14,7 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://andreavindra.vercel.app/"),
+  metadataBase: new URL(process.env.METADATA_BASE_URL || DEFAULT_METADATA.url),
   title: {
     default: DEFAULT_METADATA.creator,
     template: `%s | ${DEFAULT_METADATA.creator}`,
@@ -28,11 +28,8 @@ export const metadata: Metadata = {
     url: DEFAULT_METADATA.url,
   },
   openGraph: {
-    url: DEFAULT_METADATA.url,
     type: "website",
     siteName: DEFAULT_METADATA.siteName,
-    description: DEFAULT_METADATA.description,
-    title: DEFAULT_METADATA.creator,
     images: DEFAULT_METADATA.image,
     locale: DEFAULT_METADATA.locale,
   },
@@ -40,8 +37,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     creator: DEFAULT_METADATA.creator,
     site: DEFAULT_METADATA.siteName,
-    title: DEFAULT_METADATA.creator,
-    description: DEFAULT_METADATA.description,
     images: DEFAULT_METADATA.image,
   },
 }

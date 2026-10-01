@@ -7,9 +7,7 @@ export const metadata: Metadata = {
   title: "Gallery",
   description:
     "A gallery of photos I've taken, from places and people to random moments worth keeping.",
-  alternates: {
-    canonical: `${DEFAULT_METADATA.url}/gallery`,
-  },
+  alternates: { canonical: `${DEFAULT_METADATA.url}/gallery` },
 }
 
 export default function Page() {

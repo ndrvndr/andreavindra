@@ -7,9 +7,7 @@ export const metadata: Metadata = {
   title: "Bucket List",
   description:
     "A collection of goals, experiences, and things I hope to do someday.",
-  alternates: {
-    canonical: `${DEFAULT_METADATA.url}/bucket-list`,
-  },
+  alternates: { canonical: `${DEFAULT_METADATA.url}/bucket-list` },
 }
 
 export default function Page() {
