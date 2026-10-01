@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     site: DEFAULT_METADATA.siteName,
     images: DEFAULT_METADATA.image,
   },
+  verification: {
+    google: "S772dC6WeBoxv_eFtjILZPcv1JoLUr_84pZuSGURtPc",
+  },
 }
 
 export default function RootLayout({

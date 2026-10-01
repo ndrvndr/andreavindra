@@ -8,7 +8,10 @@ export const revalidate = false
 export const metadata: Metadata = {
   title: "Blog",
   description: "Thoughts, experiments, and lessons from building for the web.",
-  alternates: { canonical: `${DEFAULT_METADATA.url}/blog` },
+  alternates: {
+    canonical: `${DEFAULT_METADATA.url}/blog`,
+    types: { "application/rss+xml": `${DEFAULT_METADATA.url}/rss.xml` },
+  },
 }
 
 export default function Page() {

@@ -27,6 +27,8 @@ export async function POST(request: NextRequest) {
     // category/tag changes. Regeneration happens on the next visit, not here.
     revalidatePath("/blog/[slug]", "page")
     revalidatePath("/")
+    revalidatePath("/sitemap.xml")
+    revalidatePath("/rss.xml")
     return NextResponse.json({ revalidated: true })
   } catch {
     return NextResponse.json({ error: "Invalid webhook" }, { status: 400 })
