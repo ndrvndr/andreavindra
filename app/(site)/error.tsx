@@ -5,11 +5,10 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export default function Error({
-  error,
-  reset,
+  retry,
 }: {
   error: Error & { digest?: string }
-  reset: () => void
+  retry: () => void
 }) {
   return (
     <main className="layout flex min-h-screen flex-col items-center justify-center gap-y-4 text-center">
@@ -24,7 +23,7 @@ export default function Error({
       </p>
 
       <div className="mt-8 flex gap-3">
-        <Button onClick={reset} variant="secondary" size="lg">
+        <Button onClick={retry} variant="secondary" size="lg">
           Try Again
         </Button>
 

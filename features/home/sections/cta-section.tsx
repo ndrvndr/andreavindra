@@ -40,7 +40,7 @@ export function CtaSection() {
         </HoverBorderGradient>
       </div>
 
-      <BackgroundBeams useRadialGradient={false} />
+      <BackgroundBeams />
     </section>
   )
 }

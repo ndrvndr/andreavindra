@@ -1,6 +1,11 @@
 "use client"
 
-import { motion, useMotionTemplate, useMotionValue } from "motion/react"
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useReducedMotion,
+} from "motion/react"
 
 import { cn } from "@/lib/utils"
 
@@ -112,15 +117,23 @@ export const Highlight = ({
   children: React.ReactNode
   className?: string
 }) => {
+  const reducedMotion = useReducedMotion()
+
   return (
     <span className={cn("relative inline-block px-1 pb-1", className)}>
       <span className="text-foreground">{children}</span>
 
       <motion.span
         aria-hidden
-        initial={{ clipPath: "inset(0 100% 0 0 round 0.5rem)" }}
+        initial={
+          reducedMotion ? false : { clipPath: "inset(0 100% 0 0 round 0.5rem)" }
+        }
         animate={{ clipPath: "inset(0 0% 0 0 round 0.5rem)" }}
-        transition={{ duration: 2, ease: "linear", delay: 0.5 }}
+        transition={{
+          duration: reducedMotion ? 0 : 2,
+          ease: "linear",
+          delay: reducedMotion ? 0 : 0.5,
+        }}
         className={cn(
           "pointer-events-none absolute inset-0 rounded-lg px-1 pb-1",
           "bg-linear-to-r from-[rgb(18,255,247)] via-[rgb(99,255,209)] to-[rgb(179,255,171)]",

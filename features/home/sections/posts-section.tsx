@@ -1,12 +1,19 @@
+import { IconChevronRight } from "@tabler/icons-react"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button"
 import { Highlight } from "@/components/ui/hero-highlight"
 import { Separator } from "@/components/ui/separator"
 import { ArticleCard } from "@/features/blog/components/article-card"
-import { IconChevronRight } from "@tabler/icons-react"
+import { getPosts } from "@/features/blog/lib/data"
+import { getViewCounts } from "@/features/blog/lib/views"
 
-export function PostsSection() {
+export async function PostsSection() {
+  const { posts } = await getPosts({ q: "", tags: [], page: 1 }, 3)
+  const counts = await getViewCounts(
+    posts.flatMap((post) => (post.slug ? [post.slug] : []))
+  )
+
   return (
     <section id="blog" aria-labelledby="blog-heading">
       <div className="layout relative z-10 py-12 pt-20 md:py-20 lg:pt-36">
@@ -40,12 +47,15 @@ export function PostsSection() {
 
           <div className="flex-1 space-y-16">
             <ul className="space-y-8">
-              {Array.from({ length: 3 }).map((_, idx) => (
+              {posts.map((post) => (
                 <li
-                  key={idx}
+                  key={post._id}
                   className="border-t border-dashed border-neutral-900 pt-8 first:border-t-0 first:pt-0"
                 >
-                  <ArticleCard />
+                  <ArticleCard
+                    post={post}
+                    views={counts[post.slug || ""] || 0}
+                  />
                 </li>
               ))}
             </ul>
