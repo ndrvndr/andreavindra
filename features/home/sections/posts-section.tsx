@@ -50,7 +50,7 @@ export async function PostsSection() {
               {posts.map((post) => (
                 <li
                   key={post._id}
-                  className="border-t border-dashed border-neutral-900 pt-8 first:border-t-0 first:pt-0"
+                  className="border-t border-border pt-8 first:border-t-0 first:pt-0"
                 >
                   <ArticleCard
                     post={post}

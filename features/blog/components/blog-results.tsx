@@ -13,7 +13,7 @@ export function BlogResults({
       {posts.map((post) => (
         <li
           key={post._id}
-          className="border-b border-dashed pb-8 last:border-b-0 last:pb-0"
+          className="border-b border-border pb-8 last:border-b-0 last:pb-0"
         >
           <ArticleCard post={post} views={views[post.slug] || 0} />
         </li>

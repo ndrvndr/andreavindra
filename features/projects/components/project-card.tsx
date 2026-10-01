@@ -27,7 +27,7 @@ export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
       )}
     >
       <div className="relative z-0 shrink-0 lg:w-[55%]">
-        <figure className="pointer-events-none relative hidden aspect-video w-full overflow-hidden rounded-xl border border-neutral-900 shadow lg:mb-15.5 lg:block dark:shadow-none">
+        <figure className="pointer-events-none relative hidden aspect-video w-full overflow-hidden rounded-xl border border-border shadow lg:mb-15.5 lg:block dark:shadow-none">
           <Image
             src={image}
             alt={title}
@@ -38,7 +38,7 @@ export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
           />
         </figure>
 
-        <figure className="pointer-events-none isolate z-1 aspect-video overflow-hidden rounded-xl rounded-b-none border border-b-0 border-dashed border-neutral-900 shadow lg:hidden lg:border-solid dark:shadow-none">
+        <figure className="pointer-events-none isolate z-1 aspect-video overflow-hidden rounded-xl rounded-b-none border border-b-0 border-border shadow lg:hidden lg:border-solid dark:shadow-none">
           <Image
             src={image}
             alt={title}
@@ -51,7 +51,7 @@ export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
 
       <div
         className={cn(
-          "grow rounded-xl rounded-t-none border border-dashed border-neutral-900 p-6",
+          "grow rounded-xl rounded-t-none border border-border p-6",
           "lg:relative lg:z-10 lg:flex lg:max-w-2/3 lg:flex-col lg:rounded-t-xl lg:border-none lg:p-0",
           isReversed
             ? "lg:-ml-24 lg:items-end lg:text-right"
@@ -60,7 +60,7 @@ export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
       >
         <h3 className="text-4xl font-bold">{title}</h3>
 
-        <div className="lg:mt-6 lg:rounded-xl lg:border lg:border-dashed lg:border-neutral-900 lg:bg-background lg:p-6">
+        <div className="lg:mt-6 lg:rounded-xl lg:border lg:border-border lg:bg-background lg:p-6">
           <p className="mt-6 text-sm text-muted-foreground lg:mt-0">
             {description}
           </p>

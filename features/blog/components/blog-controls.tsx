@@ -41,7 +41,7 @@ export function BlogControls({
       <fieldset>
         <legend className="sr-only">Search articles</legend>
         <form
-          className="mx-auto mb-12 max-w-lg"
+          className="mx-auto mb-12 w-11/12 max-w-lg"
           onSubmit={(event) => {
             event.preventDefault()
             onFiltersChange({ ...filters, q: query, page: 1 })

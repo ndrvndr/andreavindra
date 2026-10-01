@@ -20,7 +20,7 @@ export default function GalleryContainer() {
       />
 
       <section className="layout py-16">
-        <DraggableCardContainer className="relative flex min-h-[calc(100vh-556px)] w-full items-center justify-center overflow-clip">
+        <DraggableCardContainer className="relative flex min-h-147.5 w-full items-center justify-center overflow-clip">
           {photos.map((photo, index) => (
             <DraggableCardBody key={photo.title} className={photo.className}>
               <Image

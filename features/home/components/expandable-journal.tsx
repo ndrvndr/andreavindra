@@ -2,7 +2,7 @@
 
 import { IconX } from "@tabler/icons-react"
 import { AnimatePresence, motion } from "motion/react"
-import { useEffect, useId, useRef, useState } from "react"
+import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react"
 import { createPortal } from "react-dom"
 
 import { Button } from "@/components/ui/button"
@@ -10,16 +10,20 @@ import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 import { JournalItem, journalItems } from "@/constants/journal"
 import { useOutsideClick } from "@/hooks/use-outside-click"
 
+const subscribe = () => () => {}
+const getClientSnapshot = () => true
+const getServerSnapshot = () => false
+
 export function ExpandableJournal() {
   const [active, setActive] = useState<JournalItem | null>(null)
-  const [mounted, setMounted] = useState(false)
+  const mounted = useSyncExternalStore(
+    subscribe,
+    getClientSnapshot,
+    getServerSnapshot
+  )
 
   const id = useId()
   const ref = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
