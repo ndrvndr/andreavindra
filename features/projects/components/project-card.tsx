@@ -34,11 +34,18 @@ export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
             fill
             sizes="(min-width: 1024px) 55vw, 100vw"
             className="object-cover"
+            loading="eager"
           />
         </figure>
 
         <figure className="pointer-events-none isolate z-1 aspect-video overflow-hidden rounded-xl rounded-b-none border border-b-0 border-dashed border-neutral-900 shadow lg:hidden lg:border-solid dark:shadow-none">
-          <Image src={image} alt={title} width={1440} height={810} />
+          <Image
+            src={image}
+            alt={title}
+            width={1440}
+            height={810}
+            loading="eager"
+          />
         </figure>
       </div>
 

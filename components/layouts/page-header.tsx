@@ -38,8 +38,9 @@ export function PageHeader({
             <IconComponent />
           </span>
         </Button>
-        <h1 className="mt-4 text-5xl font-bold md:text-6xl">
-          {title} <Highlight>{highlight}</Highlight>
+        <h1 className="mt-4 flex flex-wrap justify-center gap-3 text-5xl font-bold md:text-6xl">
+          <span>{title}</span>
+          <Highlight>{highlight}</Highlight>
         </h1>
         <p className="mt-3 text-muted-foreground">{description}</p>
       </div>
