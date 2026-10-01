@@ -4,15 +4,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Highlight } from "@/components/ui/hero-highlight"
 import { Separator } from "@/components/ui/separator"
-import { ArticleCard } from "@/features/blog/components/article-card"
-import { getPosts } from "@/features/blog/lib/data"
-import { getViewCounts } from "@/features/blog/lib/views"
+import { getAllPosts } from "@/features/blog/lib/data"
+
+import { RecentPostsList } from "../components/recent-posts-list"
 
 export async function PostsSection() {
-  const { posts } = await getPosts({ q: "", tags: [], page: 1 }, 3)
-  const counts = await getViewCounts(
-    posts.flatMap((post) => (post.slug ? [post.slug] : []))
-  )
+  const posts = (await getAllPosts()).slice(0, 3)
 
   return (
     <section id="blog" aria-labelledby="blog-heading">
@@ -46,19 +43,7 @@ export async function PostsSection() {
           </div>
 
           <div className="flex-1 space-y-16">
-            <ul className="space-y-8">
-              {posts.map((post) => (
-                <li
-                  key={post._id}
-                  className="border-t border-border pt-8 first:border-t-0 first:pt-0"
-                >
-                  <ArticleCard
-                    post={post}
-                    views={counts[post.slug || ""] || 0}
-                  />
-                </li>
-              ))}
-            </ul>
+            <RecentPostsList posts={posts} />
 
             <div className="mx-auto w-fit">
               <Button asChild variant="ghost" size="lg">

@@ -25,8 +25,8 @@ export async function POST(
     const secret = process.env.UPSTASH_REDIS_REST_TOKEN
     if (!redis || !secret)
       return NextResponse.json(
-        { views: 0 },
-        { headers: { "Cache-Control": "no-store" } }
+        { error: "View counter is unavailable" },
+        { status: 503, headers: { "Cache-Control": "no-store" } }
       )
     const sign = (id: string) =>
       createHmac("sha256", secret).update(id).digest("hex")
@@ -60,8 +60,8 @@ export async function POST(
     return response
   } catch {
     return NextResponse.json(
-      { views: 0 },
-      { headers: { "Cache-Control": "no-store" } }
+      { error: "View counter is unavailable" },
+      { status: 503, headers: { "Cache-Control": "no-store" } }
     )
   }
 }

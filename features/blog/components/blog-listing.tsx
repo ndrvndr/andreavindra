@@ -9,11 +9,11 @@ import { filterPosts } from "../lib/filter-posts"
 import { blogHref, parseFilters, type BlogFilters } from "../lib/filters"
 import { BlogControls } from "./blog-controls"
 import { BlogResults } from "./blog-results"
+import { useViewCounts } from "./use-view-counts"
 
 export type BlogListingData = {
   posts: BlogPost[]
   tags: TAGS_QUERY_RESULT
-  views: Record<string, number>
 }
 
 // Prerender all articles; observe shared URLs and back/forward separately.
@@ -28,6 +28,8 @@ function UrlObserver({ onChange }: { onChange: (query: string) => void }) {
 
 export function BlogListing({ initial }: { initial: BlogListingData }) {
   const [query, setQuery] = useState("")
+  const views = useViewCounts()
+
   const filters = useMemo(() => {
     const params = new URLSearchParams(query)
     return parseFilters({
@@ -58,7 +60,7 @@ export function BlogListing({ initial }: { initial: BlogListingData }) {
         tags={initial.tags}
         onFiltersChange={updateFilters}
       >
-        <BlogResults posts={posts} views={initial.views} />
+        <BlogResults posts={posts} views={views} />
       </BlogControls>
     </>
   )

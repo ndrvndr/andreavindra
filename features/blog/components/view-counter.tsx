@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react"
 
 export function ViewCounter({ slug }: { slug: string }) {
   const sent = useRef<string | null>(null)
-  const [views, setViews] = useState(0)
+  const [views, setViews] = useState<number | null>(null)
 
   useEffect(() => {
     if (sent.current === slug) return
@@ -26,7 +26,7 @@ export function ViewCounter({ slug }: { slug: string }) {
           setViews(data.views)
       })
       .catch(() => {
-        /* Views must never prevent an article from rendering. */
+        // Counting failures must not prevent an article from rendering.
       })
   }, [slug])
 
@@ -36,7 +36,7 @@ export function ViewCounter({ slug }: { slug: string }) {
         aria-hidden="true"
         className="size-3.5 text-[rgb(179,255,171)]"
       />
-      {views.toLocaleString("en")} views
+      {views === null ? "—" : views.toLocaleString("en")} views
     </span>
   )
 }

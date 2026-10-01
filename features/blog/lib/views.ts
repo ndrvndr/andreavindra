@@ -6,22 +6,28 @@ export function getRedis() {
   return url && token ? new Redis({ url, token, cache: "no-store" }) : null
 }
 
+export async function readViewCounts(
+  slugs: string[]
+): Promise<Record<string, number>> {
+  if (slugs.length === 0) return {}
+  const redis = getRedis()
+  if (!redis) throw new Error("Redis is not configured")
+  const counts = await redis.mget<(number | null)[]>(
+    ...slugs.map((slug) => `views:${slug}`)
+  )
+  return Object.fromEntries(
+    slugs.map((slug, index) => [slug, Number(counts[index]) || 0])
+  )
+}
+
 export async function getViewCounts(
   slugs: string[]
 ): Promise<Record<string, number>> {
   if (slugs.length === 0) return {}
-  const fallback = Object.fromEntries(slugs.map((slug) => [slug, 0]))
   try {
-    const redis = getRedis()
-    if (!redis) return fallback
-    const counts = await redis.mget<(number | null)[]>(
-      ...slugs.map((slug) => `views:${slug}`)
-    )
-    return Object.fromEntries(
-      slugs.map((slug, index) => [slug, Number(counts[index]) || 0])
-    )
+    return await readViewCounts(slugs)
   } catch {
-    return fallback
+    return Object.fromEntries(slugs.map((slug) => [slug, 0]))
   }
 }
 

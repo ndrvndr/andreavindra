@@ -3,10 +3,10 @@ import type { BlogPost } from "../lib/data"
 
 export function BlogResults({
   posts,
-  views = {},
+  views,
 }: {
   posts: BlogPost[]
-  views?: Record<string, number>
+  views: Record<string, number> | null
 }) {
   return posts.length ? (
     <ul className="space-y-8">
@@ -15,7 +15,10 @@ export function BlogResults({
           key={post._id}
           className="border-b border-border pb-8 last:border-b-0 last:pb-0"
         >
-          <ArticleCard post={post} views={views[post.slug] || 0} />
+          <ArticleCard
+            post={post}
+            views={views === null ? null : (views[post.slug] ?? 0)}
+          />
         </li>
       ))}
     </ul>

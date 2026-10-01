@@ -12,7 +12,7 @@ export function ArticleCard({
   views = 0,
 }: {
   post: BlogPost
-  views?: number
+  views?: number | null
 }) {
   return (
     <article className="@container/blog-card relative">
@@ -67,7 +67,7 @@ export function ArticleCard({
                   aria-hidden="true"
                   className="size-3.5 text-[rgb(179,255,171)]"
                 />
-                {views.toLocaleString("en")} views
+                {views === null ? "—" : views.toLocaleString("en")} views
               </span>
             </div>
 

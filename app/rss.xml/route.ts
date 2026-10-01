@@ -1,6 +1,8 @@
 import { DEFAULT_METADATA } from "@/constants/metadata"
 import { getAllPosts } from "@/features/blog/lib/data"
 
+export const dynamic = "force-static"
+
 function escapeXml(value: string): string {
   return value.replace(/[&<>"']/g, (character) => {
     const entities: Record<string, string> = {

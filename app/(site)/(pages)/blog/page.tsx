@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { DEFAULT_METADATA } from "@/constants/metadata"
 import { BlogContainer } from "@/features/blog/blog-container"
 
-export const revalidate = false
+export const revalidate = 604800
 
 export const metadata: Metadata = {
   title: "Blog",
