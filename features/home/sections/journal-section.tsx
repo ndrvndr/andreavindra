@@ -32,8 +32,8 @@ export function JournalSection() {
         </h2>
 
         <p className="mt-9 text-muted-foreground">
-          A short look back at the moments, changes, and milestones that have
-          shaped my journey so far.
+          A short look back at the moments and memories that stood out along the
+          way.
         </p>
 
         <ExpandableJournal />
