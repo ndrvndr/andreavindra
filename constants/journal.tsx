@@ -20,9 +20,11 @@ export const journalItems: JournalItem[] = [
         one of the more memorable trips of the year, especially because it was
         also my first time taking a boat trip there and trying snorkeling.
         <br />
+        <br />
         Seeing the underwater world for the first time made the trip feel
         different from my usual travels. It was a simple experience, but one
         that stood out because it introduced me to something completely new.
+        <br />
         <br />
         Outside of traveling, I also spent more time strengthening the areas
         where I felt I still had gaps, especially in backend development.
@@ -49,6 +51,7 @@ export const journalItems: JournalItem[] = [
         people from work, meeting new friends, and slowly building a new circle
         in a city away from home.
         <br />
+        <br />
         That year also became the start of many new experiences. In May, I
         explored Ciwidey for the first time, visiting Kawah Putih, Kawah
         Rengganis, and its suspension bridge. A few months later, in September,
@@ -71,6 +74,7 @@ export const journalItems: JournalItem[] = [
         goal in mind: finishing my thesis and completing university on time.
         After months of focusing on that final chapter, I finally graduated as
         planned, closing an important phase of my life.
+        <br />
         <br />A few months later, in October, another chapter began when I
         landed my first job as a Frontend Developer. Since the job allowed me to
         work remotely, I decided to return to my hometown in Bangka. It was a
