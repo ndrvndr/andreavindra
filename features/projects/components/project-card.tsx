@@ -77,8 +77,6 @@ export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
                   </TooltipTrigger>
                   <TooltipContent>{label}</TooltipContent>
                 </Tooltip>
-
-                <span className="sr-only">Tech Name</span>
               </li>
             ))}
           </ul>

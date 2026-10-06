@@ -4,7 +4,7 @@ import { DEFAULT_METADATA } from "@/constants/metadata"
 import HomeContainer from "@/features/home/home-container"
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: { absolute: "Andre Avindra - Software Engineer" },
   description: DEFAULT_METADATA.description,
   alternates: { canonical: DEFAULT_METADATA.url },
 }

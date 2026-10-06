@@ -2,11 +2,11 @@ export const DEFAULT_METADATA = {
   creator: "Andre Avindra",
   robots: "index, follow",
   description:
-    "An online portfolio and blog by Andre Avindra, featuring my projects, experiments, and thoughts on web development, design, and building for the web.",
+    "Portfolio and blog of Andre Avindra, a software engineer building fast, maintainable web apps with React and Next.js. Projects, articles, and experiments.",
   keyword:
     "ndrvndr, andre avindra, learn nextjs, learn javascript, learn typescript",
   siteName: "andreavindra.vercel.app",
   url: "https://andreavindra.vercel.app",
   image: "/og-image.jpg",
-  locale: "id-ID",
+  locale: "en-US",
 }
