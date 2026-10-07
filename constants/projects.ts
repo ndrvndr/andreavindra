@@ -7,6 +7,7 @@ import {
   SiLaravel,
   SiLua,
   SiNestjs,
+  SiNextdotjs,
   SiNodedotjs,
   SiNuxt,
   SiPhp,
@@ -17,8 +18,10 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiVuedotjs,
+  SiYoutube,
   SiZod,
 } from "react-icons/si"
+import { FaBrain } from "react-icons/fa"
 
 interface Tool {
   label: string
@@ -35,6 +38,23 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "AI Toxic Moderator",
+    description:
+      "Automated YouTube Live chat moderation with bilingual AI, custom blocked words, and configurable actions. Features real-time updates, message deletion, repeated timeouts, bans, unbans, and saved session reports.",
+    image:
+      "https://res.cloudinary.com/dqqmzgesp/image/upload/v1791394589/ai-toxic-mod_x9mwr6.webp",
+    githubUrl: "https://github.com/ndrvndr/ai-toxic-moderator",
+    liveDemo:
+      "https://res.cloudinary.com/dqqmzgesp/video/upload/v1791393503/ai-toxic-mod-demo_oxjnoe.mp4",
+    tools: [
+      { label: "Next.js", icon: SiNextdotjs },
+      { label: "NestJS", icon: SiNestjs },
+      { label: "PostgreSQL", icon: SiPostgresql },
+      { label: "Transformers.js / ONNX Runtime", icon: FaBrain },
+      { label: "WebSockets / YouTube Data API", icon: SiYoutube },
+    ],
+  },
   {
     title: "Flash Sale Backend",
     description:
