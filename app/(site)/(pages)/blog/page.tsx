@@ -7,7 +7,8 @@ export const revalidate = 604800
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Thoughts, experiments, and lessons from building for the web.",
+  description:
+    "Explore articles and practical notes by Andre Avindra on software development, React, Next.js, and lessons from building web applications.",
   alternates: {
     canonical: `${DEFAULT_METADATA.url}/blog`,
     types: { "application/rss+xml": `${DEFAULT_METADATA.url}/rss.xml` },

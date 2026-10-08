@@ -19,7 +19,7 @@ export function BucketListContainer() {
         icon={IconListCheck}
         title="My"
         highlight="Bucket List"
-        description="Things I want to experience, achieve, and remember along the way"
+        description="Experiences I want to try, goals I’m working toward, and milestones along the way."
       />
 
       <section
@@ -31,7 +31,7 @@ export function BucketListContainer() {
         </h2>
 
         <ul className="divide-y divide-secondary">
-          {bucketList.map((item, idx) => {
+          {bucketList.map((item) => {
             const isCompleted = item.status === "completed"
 
             return (
@@ -82,7 +82,7 @@ export function BucketListContainer() {
           className="mb-6 text-right text-xs text-muted-foreground italic"
           aria-label={`${completedCount} of ${bucketList.length} bucket list items completed`}
         >
-          {completedCount} out of {bucketList.length} completed.
+          {completedCount} of {bucketList.length} completed.
         </p>
       </section>
     </div>

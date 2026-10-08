@@ -14,7 +14,7 @@ export function ProjectsSection() {
         <div className="relative text-center">
           <p
             aria-hidden={true}
-            className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 text-[250px] leading-0 font-bold text-secondary opacity-5 lg:block"
+            className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 text-[250px] leading-0 font-bold text-secondary opacity-10 lg:block"
           >
             Projects
           </p>
@@ -22,7 +22,7 @@ export function ProjectsSection() {
             id="projects-heading"
             className="text-center text-5xl leading-16 font-bold md:text-6xl"
           >
-            Somethings I’ve <Highlight>Built</Highlight>
+            Selected <Highlight>Projects</Highlight>
           </h2>
         </div>
 
@@ -55,7 +55,7 @@ export function ProjectsSection() {
             <div className="mx-auto w-fit">
               <Button asChild variant="ghost" size="lg">
                 <Link href="/projects">
-                  <span>See more projects</span>
+                  <span>View All Projects</span>
                   <IconChevronRight />
                 </Link>
               </Button>

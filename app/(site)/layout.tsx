@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: `%s | ${DEFAULT_METADATA.creator}`,
   },
   robots: DEFAULT_METADATA.robots,
-  keywords: DEFAULT_METADATA.keyword,
+  keywords: DEFAULT_METADATA.keywords,
   description: DEFAULT_METADATA.description,
   creator: DEFAULT_METADATA.creator,
   authors: {

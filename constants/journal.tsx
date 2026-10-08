@@ -9,9 +9,9 @@ export type JournalItem = {
 export const journalItems: JournalItem[] = [
   {
     id: "2025",
-    title: "Looking Back at 2025",
+    title: "2025: Learning and Exploring",
     description:
-      "New experiences, a first look beneath the surface, and expanding my technical skills.",
+      "New experiences and opportunities to deepen my technical skills.",
     year: "2025",
     content: (
       <p>
@@ -39,9 +39,8 @@ export const journalItems: JournalItem[] = [
   },
   {
     id: "2024",
-    title: "Looking Back at 2024",
-    description:
-      "A new city, new people, and the beginning of more adventures.",
+    title: "2024: A New Chapter",
+    description: "A new city, new connections, and new adventures.",
     year: "2024",
     content: (
       <p>
@@ -64,9 +63,8 @@ export const journalItems: JournalItem[] = [
   },
   {
     id: "2023",
-    title: "Looking Back at 2023",
-    description:
-      "Finishing university, starting my career, and finding my way home again.",
+    title: "2023: From University to Working Life",
+    description: "Graduation, the start of my career, and a return home.",
     year: "2023",
     content: (
       <p>

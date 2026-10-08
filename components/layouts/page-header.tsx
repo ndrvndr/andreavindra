@@ -22,7 +22,7 @@ export function PageHeader({
     <header className="relative">
       <p
         aria-hidden={true}
-        className="absolute bottom-42.5 left-0 hidden text-[250px] leading-0 font-bold text-secondary opacity-5 lg:block"
+        className="absolute bottom-42.5 left-0 hidden text-[250px] leading-0 font-bold text-secondary opacity-10 lg:block"
       >
         {backgroundText}
       </p>
@@ -38,7 +38,7 @@ export function PageHeader({
             <IconComponent />
           </span>
         </Button>
-        <h1 className="mt-4 flex flex-wrap justify-center gap-3 text-5xl font-bold md:text-6xl">
+        <h1 className="mt-4 flex flex-wrap justify-center gap-3 text-5xl font-bold text-foreground md:text-6xl">
           <span>{title}</span>
           <Highlight>{highlight}</Highlight>
         </h1>

@@ -87,43 +87,38 @@ export const experiences: Experience[] = [
     title: "OCT 2023 - MAY 2026",
     content: (
       <div>
-        <h3 className="text-xl font-bold">Frontend Developer</h3>
+        <h3 className="text-xl font-bold text-foreground">
+          Frontend Developer
+        </h3>
         <p className="mt-1 text-sm text-muted-foreground">
           PT. Teknologi Digital Terdepan - Bandung, Indonesia
         </p>
 
-        <div className="mt-4 space-y-3 text-sm text-muted-foreground">
-          <p>
-            Teknologi Digital Terdepan is an Indonesia-based software
-            development and IT consulting company. True to our tagline,
-            "Empowering Your Digital Dominance," we help companies grow by
-            bringing digital innovations to life.
-          </p>
+        <div className="mt-4 space-y-3 text-sm text-foreground/80">
+          <p>An Indonesian software development and IT consulting company.</p>
 
           <ul className="list-disc space-y-1.5 pl-4">
             <li>
-              Core Development: Built scalable web apps via Next.js, React, and
-              TypeScript in Agile environments.
+              Built web applications with Next.js, React, and TypeScript in an
+              Agile team.
             </li>
             <li>
-              Cost Optimization: Refactored Google Maps code, significantly
-              reducing API billing costs.
+              Refactored Google Maps integration to reduce API usage costs.
             </li>
             <li>
-              State & Data: Managed state and data fetching using Zustand and
-              React Query for performance.
+              Managed application state and data fetching with Zustand and React
+              Query.
             </li>
             <li>
-              Integrations: Integrated Midtrans (payment), Biteship (shipping),
-              and Google Maps services.
+              Integrated Midtrans payments, Biteship shipping, and Google Maps
+              services.
             </li>
             <li>
-              UI/UX: Developed responsive interfaces using Tailwind CSS and
-              Shadcn UI components.
+              Developed responsive interfaces using Tailwind CSS and shadcn/ui.
             </li>
             <li>
-              R&D: Researched and adopted latest tech to enhance app performance
-              and developer workflows.
+              Researched and adopted tools to improve application performance
+              and development workflows.
             </li>
           </ul>
         </div>

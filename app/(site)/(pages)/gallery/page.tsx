@@ -6,7 +6,7 @@ import GalleryContainer from "@/features/gallery/gallery-container"
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "A gallery of photos I've taken, from places and people to random moments worth keeping.",
+    "Explore Andre Avindra’s personal photo gallery, capturing places, experiences, and memorable moments beyond software development.",
   alternates: { canonical: `${DEFAULT_METADATA.url}/gallery` },
 }
 

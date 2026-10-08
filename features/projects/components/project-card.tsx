@@ -58,10 +58,10 @@ export function ProjectCard({ project, isReversed = false }: ProjectCardProps) {
             : "lg:-mr-24 lg:text-left"
         )}
       >
-        <h3 className="text-4xl font-bold">{title}</h3>
+        <h3 className="text-4xl font-bold text-foreground">{title}</h3>
 
         <div className="lg:mt-6 lg:rounded-xl lg:border lg:border-border lg:bg-background lg:p-6">
-          <p className="mt-6 text-sm text-muted-foreground lg:mt-0">
+          <p className="mt-6 text-sm text-foreground/80 lg:mt-0">
             {description}
           </p>
         </div>

@@ -7,9 +7,9 @@ export function TimelineSection() {
       <div className="relative w-full overflow-clip">
         <p
           aria-hidden={true}
-          className="absolute top-28 left-0 hidden text-[250px] leading-0 font-bold text-secondary opacity-5 lg:block"
+          className="absolute top-28 left-0 hidden text-[250px] leading-0 font-bold text-secondary opacity-10 lg:block"
         >
-          experiences
+          experience
         </p>
         <Timeline data={experiences} />
       </div>

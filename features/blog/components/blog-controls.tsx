@@ -52,7 +52,7 @@ export function BlogControls({
             type="search"
             value={query}
             maxLength={200}
-            placeholder="Search titles and descriptions…"
+            placeholder="Search articles…"
             onChange={(event) => {
               const q = event.target.value
               setQuery(q)
@@ -70,7 +70,7 @@ export function BlogControls({
               aria-label="Filter by tags"
               className="mt-8 md:sticky md:top-16 md:mt-6 md:self-start"
             >
-              <p className="text-sm">Choose topics</p>
+              <p className="text-sm text-foreground">Filter by Topic</p>
 
               <div className="mt-6 flex flex-wrap items-baseline justify-start gap-2">
                 {tags.map(

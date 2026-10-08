@@ -17,15 +17,15 @@ export async function PostsSection() {
         <div className="relative text-center">
           <p
             aria-hidden={true}
-            className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 text-[250px] leading-0 font-bold text-secondary opacity-5 lg:block"
+            className="absolute bottom-24 left-1/2 hidden -translate-x-1/2 text-[250px] leading-0 font-bold text-secondary opacity-10 lg:block"
           >
             Posts
           </p>
           <h2
             id="blog-heading"
-            className="text-center text-5xl leading-16 font-bold md:text-6xl"
+            className="text-center text-5xl leading-16 font-bold text-foreground md:text-6xl"
           >
-            What I’ve Been <Highlight>Writing</Highlight>
+            Latest <Highlight>Articles</Highlight>
           </h2>
         </div>
 
@@ -48,7 +48,7 @@ export async function PostsSection() {
             <div className="mx-auto w-fit">
               <Button asChild variant="ghost" size="lg">
                 <Link href="/blog">
-                  <span>See more posts</span>
+                  <span>View All Articles</span>
                   <IconChevronRight />
                 </Link>
               </Button>

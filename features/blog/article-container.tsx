@@ -54,7 +54,7 @@ export async function ArticleContainer({
           )}
         </div>
 
-        <h1 className="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
+        <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl">
           {post.title}
         </h1>
 
@@ -71,7 +71,7 @@ export async function ArticleContainer({
           </Avatar>
 
           <div>
-            <p>Andre Avindra</p>
+            <p className="text-foreground">Andre Avindra</p>
             <time
               dateTime={post.publishedAt}
               className="mt-0.5 text-xs text-muted-foreground"
@@ -84,7 +84,7 @@ export async function ArticleContainer({
         <div className="mt-12 flex flex-wrap items-center justify-between gap-5 border-y py-4 text-xs text-muted-foreground">
           <ViewCounter key={slug} slug={slug} />
 
-          <span className="flex items-center gap-2">
+          <span className="flex items-center gap-2 text-foreground">
             <IconClockHour4
               aria-hidden="true"
               className="size-3.5 text-[rgb(179,255,171)]"

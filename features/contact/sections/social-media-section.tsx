@@ -5,7 +5,7 @@ import { socialLinks } from "@/constants/footer"
 export function SocialMediaSection() {
   return (
     <section>
-      <h2 className="text-4xl font-bold">Find me on</h2>
+      <h2 className="text-4xl font-bold text-foreground">Find Me Online</h2>
 
       <ul
         aria-label="Social media"

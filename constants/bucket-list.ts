@@ -10,7 +10,7 @@ export interface BucketListItem {
 
 export const bucketList: BucketListItem[] = [
   {
-    title: "Relaxing in the hot springs",
+    title: "Relax in a hot spring",
     status: "completed",
     description: "Rengganis Crater, Ciwidey",
     completedAt: "May 2024",
@@ -19,7 +19,7 @@ export const bucketList: BucketListItem[] = [
     ],
   },
   {
-    title: "Mountain climbing",
+    title: "Climb a mountain",
     status: "completed",
     description: "Mount Putri, Lembang",
     completedAt: "September 2024",
@@ -29,35 +29,35 @@ export const bucketList: BucketListItem[] = [
     ],
   },
   {
-    title: "Playing airsoft",
+    title: "Play airsoftt",
     status: "planned",
   },
   {
-    title: "Spearfishing",
+    title: "Go spearfishing",
     status: "planned",
   },
   {
-    title: "Smoking a cigar while drinking wine",
+    title: "Enjoy a cigar with a glass of wine",
     status: "planned",
   },
   {
-    title: "Seeing the aurora",
+    title: "See the aurora",
     status: "planned",
   },
   {
-    title: "Traveling around Japan",
+    title: "Travel around Japan",
     status: "planned",
   },
   {
-    title: "Buying a house",
+    title: "Buy a house",
     status: "planned",
   },
   {
-    title: "Buying a car",
+    title: "Buy a car",
     status: "planned",
   },
   {
-    title: "To be able to meet at least one member of TWICE",
+    title: "Meet a member of TWICE",
     status: "planned",
   },
 ]

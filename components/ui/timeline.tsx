@@ -10,11 +10,7 @@ interface TimelineEntry {
   content: React.ReactNode
 }
 
-const CAREER_START_YEAR: number = 2023
-
 export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
-  const years = new Date().getFullYear() - CAREER_START_YEAR
-
   const ref = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [height, setHeight] = useState(0)
@@ -41,17 +37,20 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="layout dark:bg-background"
     >
       <header className="flex flex-col items-start justify-center gap-4 px-4 py-20 md:px-8 lg:px-10">
-        <h2 id="experience-heading" className="text-4xl font-bold">
-          Work <Highlight>Experiences</Highlight>
+        <h2
+          id="experience-heading"
+          className="text-4xl font-bold text-foreground"
+        >
+          Work <Highlight>Experience</Highlight>
         </h2>
 
         <p className="max-w-sm text-muted-foreground">
-          I've been working as a software engineer for {years}{" "}
-          {years === 1 ? "year" : "years"}. Here's a timeline of my journey.
+          A closer look at my professional experience and technical
+          contributions.
         </p>
       </header>
 
-      <div ref={ref} className="relative mt-16 pb-6.5 md:mt-0">
+      <div ref={ref} className="relative mt-16 pb-10 md:mt-0 md:pb-6.5">
         <ul>
           {data.map((item) => (
             <li
@@ -65,13 +64,13 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
                 >
                   <div className="h-4 w-4 rounded-full border border-neutral-300 p-2 dark:border-secondary dark:bg-card" />
                 </div>
-                <h3 className="hidden text-xl font-bold md:block md:pl-20 md:text-sm dark:text-muted-foreground">
+                <h3 className="hidden text-xl font-bold text-muted-foreground md:block md:pl-20 md:text-sm">
                   {item.title}
                 </h3>
               </div>
 
               <div className="relative w-full pr-4 pl-20 md:pl-4">
-                <h3 className="mb-4 block text-left text-sm font-bold md:hidden dark:text-muted-foreground">
+                <h3 className="mb-4 block text-left text-sm font-bold text-muted-foreground md:hidden">
                   {item.title}
                 </h3>
                 {item.content}

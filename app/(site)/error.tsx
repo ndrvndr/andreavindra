@@ -5,10 +5,10 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export default function Error({
-  retry,
+  reset,
 }: {
   error: Error & { digest?: string }
-  retry: () => void
+  reset: () => void
 }) {
   return (
     <main className="layout flex min-h-screen flex-col items-center justify-center gap-y-4 text-center">
@@ -16,14 +16,16 @@ export default function Error({
         500
       </p>
 
-      <h1 className="text-4xl font-bold">Well, This Is Awkward</h1>
+      <h1 className="text-4xl font-bold text-foreground">
+        Something Went Wrong
+      </h1>
 
       <p className="text-sm text-muted-foreground">
-        Something went wrong on our side. Try giving it another shot.
+        We couldn’t load this page. Please try again.
       </p>
 
       <div className="mt-8 flex gap-3">
-        <Button onClick={retry} variant="secondary" size="lg">
+        <Button onClick={reset} variant="secondary" size="lg">
           Try Again
         </Button>
 

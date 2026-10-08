@@ -10,7 +10,7 @@ import type { FooterContent, SocialLink } from "@/types/navigation"
 
 export const footerContents: FooterContent[] = [
   {
-    title: "General",
+    title: "Explore",
     links: [
       {
         label: "Home",
@@ -39,18 +39,18 @@ export const footerContents: FooterContent[] = [
     ],
   },
   {
-    title: "The Website",
+    title: "Personal",
     links: [
       {
         label: "Bucket List",
         href: "/bucket-list",
       },
+      // {
+      //   label: "Statistics",
+      //   href: "/statistics",
+      // },
       {
-        label: "Statistics",
-        href: "/statistics",
-      },
-      {
-        label: "Guest Book",
+        label: "Guestbook",
         href: "/guestbook",
       },
     ],

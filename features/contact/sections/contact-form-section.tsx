@@ -12,9 +12,10 @@ import { ContactField } from "../components/contact-field"
 import { CONTACT_LIMITS, formSchema, type FormValues } from "../contact-schema"
 
 const TOAST_MESSAGES = {
-  loading: "Sending message...",
-  success: "Message sent. Thanks for reaching out!",
-  error: "Failed to send message. Please try again.",
+  loading: "Sending...",
+  success: "Thanks for reaching out. Your message has been sent.",
+  error:
+    "Your message couldn’t be sent. Please try again or email me directly at andreavindra37@gmail.com",
 } as const
 
 export function ContactFormSection() {
@@ -48,8 +49,11 @@ export function ContactFormSection() {
 
   return (
     <section aria-labelledby="contact-form-heading">
-      <h2 id="contact-form-heading" className="text-4xl font-bold">
-        Or send me an email
+      <h2
+        id="contact-form-heading"
+        className="text-4xl font-bold text-foreground"
+      >
+        Send Me a Message
       </h2>
 
       <form onSubmit={form.handleSubmit(onSubmit)} noValidate className="mt-8">
@@ -59,7 +63,7 @@ export function ContactFormSection() {
               control={control}
               name="name"
               label="Name"
-              placeholder="Enter your name"
+              placeholder="Your name"
               autoComplete="name"
               maxLength={CONTACT_LIMITS.name}
             />
@@ -69,7 +73,7 @@ export function ContactFormSection() {
               label="Email"
               type="email"
               inputMode="email"
-              placeholder="Enter your email"
+              placeholder="Your email address"
               autoComplete="email"
               maxLength={CONTACT_LIMITS.email}
             />
@@ -79,7 +83,7 @@ export function ContactFormSection() {
             control={control}
             name="subject"
             label="Subject"
-            placeholder="Enter your subject"
+            placeholder="What would you like to discuss?"
             autoComplete="off"
             maxLength={CONTACT_LIMITS.subject}
           />
@@ -88,7 +92,7 @@ export function ContactFormSection() {
             control={control}
             name="message"
             label="Message"
-            placeholder="Enter your message"
+            placeholder="Tell me about the role, project, or question you have in mind."
             maxLength={CONTACT_LIMITS.message}
             multiline
           />

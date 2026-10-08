@@ -97,7 +97,7 @@ export function ExpandableJournal() {
                       <motion.h3
                         id={`journal-title-${active.year}`}
                         layoutId={`title-${active.year}-${id}`}
-                        className="text-xl font-bold"
+                        className="text-xl font-bold text-foreground"
                       >
                         {active.title}
                       </motion.h3>
@@ -114,7 +114,7 @@ export function ExpandableJournal() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="mt-5"
+                        className="mt-5 text-foreground/80"
                       >
                         {active.content}
                       </motion.div>
@@ -137,7 +137,7 @@ export function ExpandableJournal() {
             >
               <motion.h3
                 layoutId={`title-${item.year}-${id}`}
-                className="text-xl font-bold"
+                className="text-xl font-bold text-foreground"
               >
                 {item.title}
               </motion.h3>

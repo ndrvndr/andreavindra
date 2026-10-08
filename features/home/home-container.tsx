@@ -13,9 +13,9 @@ export default function HomeContainer() {
       <Spotlight />
       <HeroSection />
       <HowIWorkSection />
-      <PostsSection />
-      <JournalSection />
       <ProjectsSection />
+      <JournalSection />
+      <PostsSection />
     </div>
   )
 }

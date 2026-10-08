@@ -31,7 +31,7 @@ export function ViewCounter({ slug }: { slug: string }) {
   }, [slug])
 
   return (
-    <span className="flex items-center gap-2">
+    <span className="flex items-center gap-2 text-foreground">
       <IconEye
         aria-hidden="true"
         className="size-3.5 text-[rgb(179,255,171)]"

@@ -9,11 +9,11 @@ export function ProjectsContainer() {
   return (
     <div>
       <PageHeader
-        backgroundText="my work"
+        backgroundText="portfolio"
         icon={IconBriefcase}
-        title="Featured"
+        title="My"
         highlight="Projects"
-        description="A collection of projects I've built to solve problems, explore ideas, and sharpen my skills."
+        description="Explore the projects I’ve built, the problems they address, and the technologies behind them."
       />
 
       <section aria-labelledby="projects-heading" className="layout pt-6 pb-24">

@@ -9,11 +9,11 @@ export default function ContactContainer() {
   return (
     <div>
       <PageHeader
-        backgroundText="say hello"
+        backgroundText="contact"
         icon={IconSend}
         title="Let's"
         highlight="Connect"
-        description="Have a question or an idea? I'd love to hear it"
+        description="Have a role, project, or technical question in mind? I’d love to hear from you."
       />
 
       <div className="layout py-16">

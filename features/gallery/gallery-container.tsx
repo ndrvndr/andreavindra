@@ -12,11 +12,11 @@ export default function GalleryContainer() {
   return (
     <div>
       <PageHeader
-        backgroundText="camera roll"
+        backgroundText="gallery"
         icon={IconLibraryPhoto}
         title="Saved"
         highlight="Moments"
-        description="Little things I want to remember"
+        description="A collection of places, experiences, and everyday moments I want to remember."
       />
 
       <section className="layout py-16">

@@ -14,11 +14,11 @@ export function AboutMeSection() {
   return (
     <>
       <PageHeader
-        backgroundText="the journey"
+        backgroundText="about"
         icon={IconUser}
         title="Meet"
         highlight="Andre"
-        description="From lockdown curiosity to full-stack engineer"
+        description="My background, professional experience, and journey in software development."
       />
 
       <section
@@ -32,33 +32,31 @@ export function AboutMeSection() {
         />
 
         <div className="w-full flex-1">
-          <h2 id="profile-name" className="text-4xl font-bold">
+          <h2 id="profile-name" className="text-4xl font-bold text-foreground">
             Andre Avindra
           </h2>
 
-          <p className="mt-8 text-muted-foreground">
-            Hi, I'm Andre. My journey into web development began at the start of
-            the pandemic. With a lot of free time, I picked up the basics from
-            online forums and YouTube, mostly around frontend. Somewhere along
-            the way, curiosity turned into a career as a frontend developer.
+          <p className="mt-8 text-foreground/80">
+            I’m a software engineer with a background in frontend development
+            and a growing focus on backend systems and deployment. I started
+            learning web development during the pandemic through online
+            communities and tutorials, turning that curiosity into a
+            professional career.
           </p>
-          <p className="mt-4 text-muted-foreground">
-            As I grew professionally, I kept running into the parts of a product
-            that live beyond the browser. So I started learning backend and
-            DevOps on my own to fill those gaps, from building APIs and
-            databases to shipping and running apps. I welcome constructive
-            feedback because it's the fastest way to get better.
+          <p className="mt-4 text-foreground/80">
+            My experience spans building web interfaces, integrating APIs, and
+            improving application performance. Alongside my frontend work, I’ve
+            expanded my skills in backend development and DevOps to better
+            understand how applications are built, deployed, and maintained.
           </p>
-          <p className="mt-4 text-muted-foreground">
-            I built this site to share what I'm learning and to showcase the
-            projects I've worked on. Writing things down helps me understand
-            them better, and hopefully it helps someone else too. Feel free to
-            reach out, I'd love to hear from you!
+          <p className="mt-4 text-foreground/80">
+            This website brings together my projects, technical writing, and
+            lessons from that process. I use it to share what I learn and
+            connect with people who are building useful software.
           </p>
 
-          <p id="tech-stack-label" className="mt-8 text-muted-foreground">
-            These days I work across the full stack. Here are the tools I reach
-            for most:
+          <p id="tech-stack-label" className="mt-8 text-foreground/80">
+            Technologies I use across frontend, backend, and deployment.
           </p>
 
           <ul
@@ -69,7 +67,10 @@ export function AboutMeSection() {
               <li key={name}>
                 <Tooltip>
                   <TooltipTrigger aria-label={name}>
-                    <Icon aria-hidden="true" className="size-8" />
+                    <Icon
+                      aria-hidden="true"
+                      className="size-8 text-muted-foreground"
+                    />
                   </TooltipTrigger>
                   <TooltipContent>
                     <div className="space-y-2">

@@ -43,7 +43,7 @@ export function ArticleCard({
           <h2 className="mt-3 text-xl font-bold">
             <Link
               href={`/blog/${post.slug}`}
-              className="after:absolute after:inset-0 after:rounded-md hover:underline focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-4 focus-visible:after:outline-ring"
+              className="text-foreground after:absolute after:inset-0 after:rounded-md hover:underline focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-4 focus-visible:after:outline-ring"
             >
               {post.title}
             </Link>
@@ -54,7 +54,7 @@ export function ArticleCard({
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
-            <div className="flex gap-5 text-xs">
+            <div className="flex gap-5 text-xs text-foreground">
               <span className="flex items-center gap-2">
                 <IconClockHour4
                   aria-hidden="true"

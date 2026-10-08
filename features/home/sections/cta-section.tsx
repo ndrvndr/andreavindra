@@ -18,12 +18,12 @@ export function CtaSection() {
           id="newsletter-title"
           className="text-5xl font-bold text-foreground md:text-6xl"
         >
-          Subscribe to new posts
+          New Articles, Delivered
         </h2>
 
         <p className="mx-auto mt-4 max-w-lg text-sm text-muted-foreground md:text-base">
-          Get new articles on software engineering, technology, and things
-          I&apos;m learning delivered straight to your inbox. No spam.
+          Get my latest articles on software development and the things I’m
+          learning, straight to your inbox.
         </p>
 
         <HoverBorderGradient containerClassName="mx-auto mt-8 rounded-xl">

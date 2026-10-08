@@ -6,7 +6,7 @@ import { BucketListContainer } from "@/features/bucket-list/bucket-list-containe
 export const metadata: Metadata = {
   title: "Bucket List",
   description:
-    "A collection of goals, experiences, and things I hope to do someday.",
+    "Explore Andre Avindra’s personal bucket list, from travel and new experiences to life goals, with updates on completed milestones.",
   alternates: { canonical: `${DEFAULT_METADATA.url}/bucket-list` },
 }
 

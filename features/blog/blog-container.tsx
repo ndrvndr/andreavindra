@@ -11,11 +11,11 @@ export async function BlogContainer() {
   return (
     <>
       <PageHeader
-        backgroundText="logbook"
+        backgroundText="articles"
         icon={IconArticle}
-        title="Things I'm"
-        highlight="Learning"
-        description="Notes on software engineering, technology, and the lessons I pick up along the way."
+        title="Articles &"
+        highlight="Notes"
+        description="Practical guides and notes on software development, technology, and what I’m learning."
       />
 
       <section aria-label="Blog articles">

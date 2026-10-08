@@ -33,7 +33,7 @@ export function PrincipleCard({
 
       <div
         aria-hidden="true"
-        className="relative z-10 mb-4 px-10 dark:text-muted-foreground"
+        className="relative z-10 mb-4 px-10 text-muted-foreground"
       >
         <Icon />
       </div>
@@ -41,12 +41,12 @@ export function PrincipleCard({
       <div className="relative z-10 mb-2 px-10 text-lg font-bold">
         <div className="absolute inset-y-0 left-0 h-6 w-1 origin-center rounded-tr-full rounded-br-full bg-neutral-300 transition-all duration-200 group-hover/feature:h-8 group-hover/feature:bg-blue-500 dark:bg-secondary" />
 
-        <h3 className="inline-block transition duration-200 group-hover/feature:translate-x-2">
+        <h3 className="inline-block text-foreground transition duration-200 group-hover/feature:translate-x-2">
           {title}
         </h3>
       </div>
 
-      <p className="relative z-10 max-w-xs px-10 text-sm dark:text-muted-foreground">
+      <p className="relative z-10 max-w-xs px-10 text-sm text-muted-foreground">
         {description}
       </p>
     </article>

@@ -12,16 +12,19 @@ export default function GuestbookContainer() {
         icon={IconBook}
         title="Sign the"
         highlight="Guestbook"
-        description="Leave a note to let me know you stopped by"
+        description="Leave a message, share a thought, or simply say hello."
       />
 
       <section
         aria-labelledby="guestbook-comments-title"
         className="layout pt-16 pb-12 md:pt-8 md:pb-20"
       >
-        <h2 className="text-sm text-muted-foreground">
-          To leave a note, write a message in the guestbook below or get in
-          touch with me by{" "}
+        <h2
+          className="text-sm text-foreground/80"
+          id="guestbook-comments-title"
+        >
+          Sign in with GitHub to leave a public message below. Prefer a private
+          conversation? Send me an{" "}
           <Link href="/contact" className="underline">
             email
           </Link>

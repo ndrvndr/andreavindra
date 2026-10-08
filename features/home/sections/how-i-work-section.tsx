@@ -22,19 +22,18 @@ export function HowIWorkSection() {
 
       <div className="layout relative z-10 flex flex-col items-center py-12 pt-20 md:py-20">
         <p className="text-sm tracking-[0.3em] text-muted-foreground uppercase">
-          How I Work
+          HOW I WORK
         </p>
 
         <h2
           id="how-i-work-heading"
-          className="mt-9 text-center text-5xl leading-16 font-bold md:text-6xl"
+          className="mt-9 text-center text-5xl leading-16 font-bold text-foreground md:text-6xl"
         >
-          Built Around <Highlight>What Matters</Highlight>
+          Built with <Highlight>Purpose</Highlight>
         </h2>
 
         <p className="mt-9 max-w-sm text-center text-muted-foreground">
-          I focus on clarity, structure, and thoughtful decisions that make
-          products easier to use, build, and maintain.
+          Understand the why. Be intentional with the how.
         </p>
 
         <ul className="relative z-10 mx-auto mt-10 mb-12 grid max-w-7xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

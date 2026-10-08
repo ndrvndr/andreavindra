@@ -6,7 +6,7 @@ import { ProjectsContainer } from "@/features/projects/projects-container"
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "A collection of projects I've built, explored, and learned from across web development and software engineering.",
+    "Explore Andre Avindra’s software development projects, from web interfaces to backend systems, with details on features and technologies.",
   alternates: { canonical: `${DEFAULT_METADATA.url}/projects` },
 }
 

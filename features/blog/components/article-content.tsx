@@ -19,13 +19,13 @@ function safeHref(href: unknown) {
 const components: PortableTextComponents = {
   block: {
     normal: ({ children }) => (
-      <p className="my-5 leading-8 text-muted-foreground">{children}</p>
+      <p className="my-5 leading-8 text-foreground/80">{children}</p>
     ),
     h2: ({ children, value }) => (
       <h2
         id={headingId(value._key)}
         tabIndex={-1}
-        className="mt-12 mb-4 scroll-mt-8 text-3xl font-bold first-of-type:mt-0 md:scroll-mt-40"
+        className="mt-12 mb-4 scroll-mt-8 text-3xl font-bold text-foreground first-of-type:mt-0 md:scroll-mt-40"
       >
         {children}
       </h2>
@@ -34,7 +34,7 @@ const components: PortableTextComponents = {
       <h3
         id={headingId(value._key)}
         tabIndex={-1}
-        className="mt-9 mb-3 scroll-mt-8 text-2xl font-semibold md:scroll-mt-40"
+        className="mt-9 mb-3 scroll-mt-8 text-2xl font-semibold text-foreground md:scroll-mt-40"
       >
         {children}
       </h3>
@@ -43,7 +43,7 @@ const components: PortableTextComponents = {
       <h4
         id={headingId(value._key)}
         tabIndex={-1}
-        className="mt-8 mb-3 scroll-mt-8 text-xl font-semibold md:scroll-mt-40"
+        className="mt-8 mb-3 scroll-mt-8 text-xl font-semibold text-foreground md:scroll-mt-40"
       >
         {children}
       </h4>
@@ -56,19 +56,19 @@ const components: PortableTextComponents = {
   },
   list: {
     bullet: ({ children }) => (
-      <ul className="my-5 list-disc space-y-2 pl-6 text-muted-foreground">
+      <ul className="my-5 list-disc space-y-2 pl-6 text-foreground/80">
         {children}
       </ul>
     ),
     number: ({ children }) => (
-      <ol className="my-5 list-decimal space-y-2 pl-6 text-muted-foreground">
+      <ol className="my-5 list-decimal space-y-2 pl-6 text-foreground/80">
         {children}
       </ol>
     ),
   },
   marks: {
     code: ({ children }) => (
-      <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-sm">
+      <code className="rounded bg-card px-1.5 py-0.5 font-mono text-sm text-muted-foreground">
         {children}
       </code>
     ),

@@ -19,8 +19,8 @@ export function Footer() {
           <p className="text-2xl font-bold text-foreground">Andre Avindra</p>
 
           <p className="mt-3 text-xs text-muted-foreground">
-            Software engineer building things, sharing ideas, and documenting
-            the journey.
+            Software engineer focused on web development, sharing projects and
+            practical insights.
           </p>
 
           <ul aria-label="Social links" className="mt-6 flex gap-3">
@@ -30,14 +30,14 @@ export function Footer() {
                   <LinkPreview url={social.href} aria-label={social.label}>
                     <Icon
                       aria-hidden="true"
-                      className="size-5 text-muted-foreground"
+                      className="size-5 text-foreground/80"
                     />
                   </LinkPreview>
                 ) : (
                   <Link href={social.href} aria-label={social.label}>
                     <Icon
                       aria-hidden="true"
-                      className="size-5 text-muted-foreground"
+                      className="size-5 text-foreground/80"
                     />
                   </Link>
                 )}
@@ -74,11 +74,12 @@ export function Footer() {
 
         <section aria-labelledby="newsletter-title">
           <h3 id="newsletter-title" className="font-semibold text-foreground">
-            Subscribe to new posts
+            New Articles, Delivered
           </h3>
 
           <p className="mt-3 text-xs text-muted-foreground">
-            Get new articles delivered straight to your inbox. No spam.
+            Get my latest articles on software development and the things I’m
+            learning, straight to your inbox.
           </p>
 
           <HoverBorderGradient as="div" containerClassName="mt-6 rounded-xl">

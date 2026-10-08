@@ -24,8 +24,10 @@ export function BlogResults({
     </ul>
   ) : (
     <div className="grid place-items-center rounded-xl border border-dashed px-8 py-16 text-center">
-      <h2 className="text-sm">Whoops! No articles found.</h2>
-      <p className="mt-2 text-sm text-muted-foreground">Try a new keyword</p>
+      <h2 className="text-sm text-foreground">No Articles Found</h2>
+      <p className="mt-2 text-sm text-muted-foreground">
+        Try a different keyword or adjust your topic filter.d
+      </p>
     </div>
   )
 }

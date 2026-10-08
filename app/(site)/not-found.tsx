@@ -9,10 +9,10 @@ export default function NotFound() {
         404
       </p>
 
-      <h1 className="text-4xl font-bold">Nothing Here</h1>
+      <h1 className="text-4xl font-bold text-foreground">Page Not Found</h1>
 
       <p className="text-sm text-muted-foreground">
-        Looks like this page wandered off somewhere.
+        The page you’re looking for may have moved or no longer exists.
       </p>
 
       <Button asChild variant="outline" size="lg">

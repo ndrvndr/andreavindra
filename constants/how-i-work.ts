@@ -9,35 +9,37 @@ import {
 
 export const howIWorkPrinciples = [
   {
-    title: "Start With Why",
-    description: "Understand the problem before choosing the solution.",
+    title: "Understand the Problem",
+    description:
+      "Clarify the goals and constraints before choosing a solution.",
     icon: IconTarget,
   },
   {
-    title: "Shape the System",
-    description: "Build clear structures, flows, and reusable patterns.",
+    title: "Create Clear Structure",
+    description:
+      "Organize code and components so they’re easy to navigate and reuse.",
     icon: IconHierarchy3,
   },
   {
-    title: "Remove the Noise",
-    description: "Simplify what can be simplified without losing what matters.",
+    title: "Keep It Simple",
+    description:
+      "Reduce unnecessary complexity in both the interface and implementation.",
     icon: IconFilter,
   },
   {
-    title: "Build to Evolve",
-    description: "Write code that stays understandable as requirements change.",
+    title: "Build for Change",
+    description: "Write readable code that can adapt as requirements evolve.",
     icon: IconBraces,
   },
   {
-    title: "Sweat the Details",
+    title: "Refine the Details",
     description:
-      "Small decisions in interaction, performance, and polish shape the experience.",
+      "Pay attention to interactions, performance, and visual consistency.",
     icon: IconSparkles,
   },
   {
-    title: "Ship, Learn, Repeat",
-    description:
-      "Get it into the real world, learn from it, and keep refining.",
+    title: "Deliver and Improve",
+    description: "Use feedback to guide improvements after release.",
     icon: IconRocket,
   },
 ]

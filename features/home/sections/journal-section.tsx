@@ -26,14 +26,14 @@ export function JournalSection() {
 
         <h2
           id="journal-heading"
-          className="mt-9 text-5xl leading-16 font-bold md:text-6xl"
+          className="mt-9 text-5xl leading-16 font-bold text-foreground md:text-6xl"
         >
-          The <Highlight>Journey</Highlight> So Far
+          Beyond the <Highlight>Code</Highlight>
         </h2>
 
         <p className="mt-9 text-muted-foreground">
-          A short look back at the moments and memories that stood out along the
-          way.
+          Annual reflections on life, learning, and the experiences that shape
+          my perspective.
         </p>
 
         <ExpandableJournal />

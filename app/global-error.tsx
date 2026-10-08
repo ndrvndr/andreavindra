@@ -5,7 +5,7 @@ import ErrorPage from "./(site)/error"
 
 export default function GlobalError(props: {
   error: Error & { digest?: string }
-  retry: () => void
+  reset: () => void
 }) {
   return (
     <html lang="en" className="dark">
