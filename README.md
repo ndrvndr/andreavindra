@@ -36,14 +36,14 @@ Open [http://localhost:3000](http://localhost:3000). Sanity Studio is available 
 
 Use [`.env.example`](./.env.example) as the complete variable list. Do not commit `.env.local` or share secret values.
 
-| Variables | Purpose |
-| --- | --- |
-| `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `NEXT_PUBLIC_SANITY_API_VERSION` | Connect the blog and Studio to Sanity. Without a project ID, the blog returns no posts. |
-| `SANITY_REVALIDATE_SECRET` | Verify signed Sanity webhook requests to `/api/revalidate`. |
-| `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` | Store article view counts. Without these, view counts fall back to zero. |
-| `GMAIL_USER`, `GMAIL_APP_PASSWORD` | Send messages from the contact form through Gmail. |
-| `NEXT_PUBLIC_GISCUS_REPO`, `NEXT_PUBLIC_GISCUS_REPO_ID`, `NEXT_PUBLIC_GISCUS_CATEGORY`, `NEXT_PUBLIC_GISCUS_CATEGORY_ID` | Configure article comments through Giscus. |
-| `METADATA_BASE_URL` | Optional public origin for metadata and OG image URLs. When omitted, the site uses `https://andreavindra.vercel.app`; set it only when testing another URL, such as an HTTPS tunnel. |
+| Variables                                                                                                                | Purpose                                                                                                                                                                            |
+| ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `NEXT_PUBLIC_SANITY_API_VERSION`                          | Connect the blog and Studio to Sanity. Without a project ID, the blog returns no posts.                                                                                            |
+| `SANITY_REVALIDATE_SECRET`                                                                                               | Verify signed Sanity webhook requests to `/api/revalidate`.                                                                                                                        |
+| `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`                                                                     | Store article view counts. Without these, view counts fall back to zero.                                                                                                           |
+| `GMAIL_USER`, `GMAIL_APP_PASSWORD`                                                                                       | Send messages from the contact form through Gmail.                                                                                                                                 |
+| `NEXT_PUBLIC_GISCUS_REPO`, `NEXT_PUBLIC_GISCUS_REPO_ID`, `NEXT_PUBLIC_GISCUS_CATEGORY`, `NEXT_PUBLIC_GISCUS_CATEGORY_ID` | Configure article comments through Giscus.                                                                                                                                         |
+| `METADATA_BASE_URL`                                                                                                      | Optional public origin for metadata and OG image URLs. When omitted, the site uses `https://andreavindra.is-a.dev`; set it only when testing another URL, such as an HTTPS tunnel. |
 
 ## Useful commands
 
@@ -61,6 +61,6 @@ bun run typegen      # Regenerate Sanity schema and TypeScript types
 
 Import the GitHub repository into Vercel with the repository root (`./`) as the Root Directory and **Next.js** as the framework. Leave the Build Command, Output Directory, and Install Command on their defaults: Vercel detects `bun.lock` and the `build` script in `package.json`.
 
-Add the needed environment variables from `.env.example` to the Vercel project, at least for **Production**. Local `.env.local` values are not uploaded automatically. You can omit `METADATA_BASE_URL` when deploying to `andreavindra.vercel.app`. Deploy the production branch, then verify the blog, contact form, comments, and view counts.
+Add the needed environment variables from `.env.example` to the Vercel project, at least for **Production**. Local `.env.local` values are not uploaded automatically. You can omit `METADATA_BASE_URL` when deploying to `andreavindra.is-a.dev`. Deploy the production branch, then verify the blog, contact form, comments, and view counts.
 
 To refresh cached blog content after a Sanity publish, update, or delete, configure a signed Sanity webhook that sends `POST` requests to `/api/revalidate`. Its secret must match `SANITY_REVALIDATE_SECRET` in Vercel. The endpoint accepts `post`, `tag`, and `category` documents.

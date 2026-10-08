@@ -14,8 +14,8 @@ export const DEFAULT_METADATA = {
     "JavaScript",
     "TypeScript",
   ],
-  siteName: "andreavindra.vercel.app",
-  url: "https://andreavindra.vercel.app",
+  siteName: "andreavindra.is-a.dev",
+  url: "https://andreavindra.is-a.dev",
   image: "/og-image.png",
   locale: "en-US",
 }

@@ -15,10 +15,6 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
         hostname: "res.cloudinary.com",
       },
       {
@@ -26,6 +22,16 @@ const nextConfig: NextConfig = {
         hostname: "api.microlink.io",
       },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "andreavindra.vercel.app" }],
+        destination: "https://andreavindra.is-a.dev/:path*",
+        permanent: true,
+      },
+    ]
   },
 }
 
