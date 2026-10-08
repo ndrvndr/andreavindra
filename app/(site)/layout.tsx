@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: DEFAULT_METADATA.image,
   },
   verification: {
-    google: "S772dC6WeBoxv_eFtjILZPcv1JoLUr_84pZuSGURtPc",
+    google: "ypG4fMOGEDjbZvSZT3uQhf-u8-XqSsOCL1aS4-4MbLQ",
   },
 }
 
