@@ -87,6 +87,8 @@ const components: PortableTextComponents = {
         return (
           <a
             href={href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center rounded-md border border-border bg-card px-1.5 text-xs text-foreground no-underline transition-colors hover:bg-primary hover:text-primary-foreground"
           >
             {children}
@@ -97,6 +99,8 @@ const components: PortableTextComponents = {
       return (
         <a
           href={href}
+          target="_blank"
+          rel="noopener noreferrer"
           className="underline underline-offset-4 hover:text-primary"
         >
           {children}
