@@ -49,18 +49,37 @@ export const post = defineType({
             annotations: [
               {
                 name: "link",
+                title: "Link",
                 type: "object",
                 fields: [
                   defineField({
                     name: "href",
+                    title: "URL",
                     type: "url",
                     validation: (rule) =>
-                      rule
-                        .required()
-                        .uri({
-                          allowRelative: true,
-                          scheme: ["http", "https", "mailto"],
-                        }),
+                      rule.required().uri({
+                        allowRelative: true,
+                        scheme: ["http", "https", "mailto"],
+                      }),
+                  }),
+                  defineField({
+                    name: "variant",
+                    title: "Style",
+                    type: "string",
+                    options: {
+                      list: [
+                        {
+                          title: "Underline",
+                          value: "underline",
+                        },
+                        {
+                          title: "Button",
+                          value: "button",
+                        },
+                      ],
+                      layout: "radio",
+                    },
+                    initialValue: "underline",
                   }),
                 ],
               },
@@ -98,7 +117,25 @@ export const post = defineType({
           ],
           preview: { select: { title: "language", subtitle: "code" } },
         }),
+        defineArrayMember({
+          type: "table",
+        }),
       ],
+      components: {
+        portableText: {
+          plugins: (props) => {
+            return props.renderDefault({
+              ...props,
+              plugins: {
+                ...props.plugins,
+                table: {
+                  enabled: true,
+                },
+              },
+            })
+          },
+        },
+      },
     }),
     defineField({
       name: "category",

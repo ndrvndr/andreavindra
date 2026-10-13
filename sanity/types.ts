@@ -15,6 +15,38 @@
 export declare const internalGroqTypeReferenceTo: unique symbol
 
 // Source: sanity/schema.json
+export type Table = {
+  _type: "table"
+  headerRows?: number
+  rows?: Array<{
+    cells?: Array<{
+      value?: Array<{
+        children?: Array<{
+          marks?: Array<string>
+          text?: string
+          _type: "span"
+          _key: string
+        }>
+        style?: "normal" | "h2" | "h3"
+        listItem?: "bullet" | "number"
+        markDefs?: Array<{
+          href: string
+          variant?: "underline" | "button"
+          _type: "link"
+          _key: string
+        }>
+        level?: number
+        _type: "block"
+        _key: string
+      }>
+      _type: "cell"
+      _key: string
+    }>
+    _type: "row"
+    _key: string
+  }>
+}
+
 export type Tag = {
   _id: string
   _type: "tag"
@@ -67,6 +99,7 @@ export type Post = {
         listItem?: "bullet" | "number"
         markDefs?: Array<{
           href: string
+          variant?: "underline" | "button"
           _type: "link"
           _key: string
         }>
@@ -90,6 +123,9 @@ export type Post = {
         _type: "codeBlock"
         _key: string
       }
+    | ({
+        _key: string
+      } & Table)
   >
   category: CategoryReference
   tags: Array<
@@ -239,6 +275,7 @@ export type Geopoint = {
 }
 
 export type AllSanitySchemaTypes =
+  | Table
   | Tag
   | SanityImageAssetReference
   | CategoryReference
@@ -358,6 +395,9 @@ export type POST_QUERY_RESULT = {
   }>
   minRead: number | 1
   content: Array<
+    | ({
+        _key: string
+      } & Table)
     | {
         children?: Array<{
           marks?: Array<string>
@@ -369,6 +409,7 @@ export type POST_QUERY_RESULT = {
         listItem?: "bullet" | "number"
         markDefs?: Array<{
           href: string
+          variant?: "button" | "underline"
           _type: "link"
           _key: string
         }>

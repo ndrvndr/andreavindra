@@ -8,8 +8,10 @@ import { headingId } from "../lib/headings"
 import { CopyCodeButton } from "./copy-code-button"
 
 type Content = NonNullable<POST_QUERY_RESULT>["content"]
+
 type ImageBlock = Extract<Content[number], { _type: "image" }>
 type CodeBlock = Extract<Content[number], { _type: "codeBlock" }>
+type TableBlock = Extract<Content[number], { _type: "table" }>
 
 function safeHref(href: unknown) {
   if (typeof href !== "string") return undefined
@@ -74,15 +76,31 @@ const components: PortableTextComponents = {
     ),
     link: ({ children, value }) => {
       const href = safeHref(value?.href)
-      return href ? (
+
+      if (!href) {
+        return <>{children}</>
+      }
+
+      const variant = value?.variant ?? "underline"
+
+      if (variant === "button") {
+        return (
+          <a
+            href={href}
+            className="inline-flex items-center rounded-md border border-border bg-card px-1.5 text-xs text-foreground no-underline transition-colors hover:bg-primary hover:text-primary-foreground"
+          >
+            {children}
+          </a>
+        )
+      }
+
+      return (
         <a
           href={href}
           className="underline underline-offset-4 hover:text-primary"
         >
           {children}
         </a>
-      ) : (
-        <>{children}</>
       )
     },
   },
@@ -107,8 +125,8 @@ const components: PortableTextComponents = {
         </figure>
       ) : null,
     codeBlock: ({ value }: { value: CodeBlock }) => (
-      <figure className="my-6 overflow-hidden rounded-lg border bg-muted/40">
-        <figcaption className="flex items-center justify-between gap-3 border-b px-4 py-2 text-xs text-muted-foreground">
+      <figure className="my-6 overflow-hidden rounded-xl border bg-card">
+        <figcaption className="flex items-center justify-between gap-3 border-b px-4 py-2 text-xs text-foreground">
           <span>{value.language || "Code"}</span>
           <CopyCodeButton code={value.code ?? ""} />
         </figcaption>
@@ -121,6 +139,47 @@ const components: PortableTextComponents = {
         </pre>
       </figure>
     ),
+    table: ({ value }: { value: TableBlock }) => {
+      const headerRows = value.headerRows ?? 0
+
+      return (
+        <div className="my-8 overflow-hidden rounded-xl border border-border">
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <tbody>
+                {value.rows?.map((row, rowIndex) => {
+                  const isHeader = rowIndex < headerRows
+
+                  return (
+                    <tr key={row._key}>
+                      {row.cells?.map((cell) => {
+                        const Cell = isHeader ? "th" : "td"
+
+                        return (
+                          <Cell
+                            key={cell._key}
+                            className={
+                              isHeader
+                                ? "border border-border bg-card px-4 py-3 text-left font-semibold"
+                                : "border border-border px-4 py-3 align-top"
+                            }
+                          >
+                            <PortableText
+                              value={cell.value}
+                              components={components}
+                            />
+                          </Cell>
+                        )
+                      })}
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )
+    },
   },
 }
 
